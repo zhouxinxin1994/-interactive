@@ -32,7 +32,7 @@ linux下的配置信息
 
 里面还有些bug，如果有需求，会继续维护。
 
-作者联系方式 email: zjxcool2018@gmail.com
+作者联系方式 email: 1191285552@qq.com
 
 
 
