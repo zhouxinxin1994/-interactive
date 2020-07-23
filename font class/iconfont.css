@@ -1,0 +1,38 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1581220066382'); /* IE9 */
+  src: url('iconfont.eot?t=1581220066382#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMsAAsAAAAABwAAAALgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBaIFgATYCJAMMCwgABCAFhG0HNxsnBsguIScbXqSNWFGuN5M7eXTJXJcvgCK80gjCNXI2yd0Do3yLLTtEVVXHEtCx8CgkG10JbMQP3twx/SIb0EDOs1OgM44o72sUWFdLl16E2QR0mqLUotrN/959v5pQqjFI0IzHxaGRAqNO20stXMXqeEQqtgaUYOHkwV+f+DWwAScUsCWc2YTnf+hAh5A4NfJ5Lqc37exArvGBclx7UXTUCzAOKKC9MYoSLaAEuWHsApdwn0CzcQTck+ydxXIKa1kgrjSMxHK5pKKwSqNQ1+wtiKcqjelIf2KehN+P/waRg6TKsNYeurxux5Z++aved96d8wkpAjxcIWMVUIgLtcVTkoLxWLMx1d5YK0KaKwOhUtfX9h8eSRA1rPZWsIhKiV+TrjI1HUD1XXdlUHuNloNijrG4Xm8roskiVSrPl9t9ffZnenqPxb8++a0/H+z0+VEuX5+9OL9fkeR+aYPb31LpfJvVv6u//A1On4hfVqW4SsuUitYk/dpz3663NXfS/5Qf7/MR49hvMOZBfDz1m/fxq7dmU9zy2zJRIjEzr6apv9A8wuX/4z1N/+Pz4tb7lhNyibUsf0kSMfLt/KN/49bgdqnPvbGFAXzFv+G5RYZGid6q36rq2VN0jeXKRVW6SjOUrWfiErCjGTusaLdnvLXv1suhUV+KpMEYskazZGFXUWmxhlqjTTRboQ+36NElRRHBsgEQOi1I2n1G1mklC3uj0u9DrTOSaHYimme2mA9XWl2RGLTBPkCxeEQdjylEnSfIhgFRWU0oXKDSbgZkp1esbGKEao4N04gNZkMhKh6CAo9hEHCointomU42RszwLq17UcfxMFawm4IIA9mA9QAUFi5C/cFGofT5E4gZChCqRVRTvIAUzR0dSIzoQW4ao16ie3lmMsIMzAwKRAoXAgr4UWAXOVDrZ3mQxejII/LCDI76xb7Gzvrm8PsOQTPryhwUoQmD+mrtCjdKeQ3pAwA=') format('woff2'),
+  url('iconfont.woff?t=1581220066382') format('woff'),
+  url('iconfont.ttf?t=1581220066382') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1581220066382#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shipin:before {
+  content: "\e64e";
+  font-size: 18px;
+}
+
+.icon-jia1:before {
+  content: "\e624";
+  color: #fff;
+}
+@font-face {
+     font-style:normal;
+     font-family:包图小白体;
+     src:url('./fonts/包图小白体.ttf') format('truetype');
+ }
+
+@font-face {
+    font-style: normal;
+    font-family: 苹方黑体-极细-简;
+    src: url('./fonts/苹方黑体-极细-简.ttf') format('truetype');
+}
+

@@ -1,0 +1,764 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>互动视频demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="images/Favicon.png">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="font class/iconfont.css" >
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/flatpickr.min.css">
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="css/fontello-codes.css">
+	<link rel="stylesheet" type="text/css" href="css/thumbs-embedded.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/color.css">
+
+</head>
+
+
+<body>
+
+	<div class="wrapper hp_1"style="position:relative;width:100%;">
+		<header>
+			<div class="top_bar">
+				<div class="container">
+					<div class="top_header_content">
+						<div class="menu_logo">
+							<a href="#" title="" class="menu">
+								<i class="icon-menu"></i>
+							</a>
+							<a href="index.html" title="" class="logo">
+								<img src="images/logo2(small).png" height="70" width="160" alt="">
+							</a>
+						</div><!--menu_logo end-->
+						<div class="search_form">
+							<form>
+								<input type="text" name="search" placeholder="搜索课程">
+								<button type="submit">
+									<i class="icon-search"></i>
+								</button>
+							</form>
+						</div><!--search_form end-->
+						<ul class="controls-lv">
+							<p id="usericon"></p>
+							<li>
+								<a href="#" title=""><i class="icon-message"></i></a>
+							</li>
+							<li>
+								<a href="#" title=""><i class="icon-notification"></i></a>
+							</li>
+							<li class="user-log">
+								<div class="user-ac-img" id="">
+									<img src="images/resources/user2.png"  alt="">
+								</div>
+								<div class="account-menu">
+									<h4>测试用户 <span class="usr-status">专业版</span></h4>
+									<div class="sd_menu">
+										<ul class="mm_menu">
+											<li>
+												<span>
+													<i class="icon-user"></i>
+												</span>
+												<a href="#" title="">我的频道</a>
+											</li>
+											<li>
+												<span>
+													<i class="icon-paid_sub"></i>
+												</span>
+												<a href="#" title="">测试功能</a>
+											</li>
+											<li>
+												<span>
+													<i class="icon-settings"></i>
+												</span>
+												<a href="#" title="">设置</a>
+											</li>
+											<li>
+												<span>
+													<i class="icon-logout"></i>
+												</span>
+												<a id="logout" title="">退出</a>
+											</li>
+										</ul>
+									</div><!--sd_menu end-->
+									<div class="sd_menu scnd">
+										<ul class="mm_menu">
+											<li>
+												<span>
+													<i class="icon-light"></i>
+												</span>
+												<a href="#" title="">夜晚模式</a>
+												<label class="switch">
+													<input type="checkbox">
+													<b class="slider round"></b>
+												</label>
+											</li>
+											<li>
+												<span>
+													<i class="icon-language"></i>
+												</span>
+												<a href="#" title="">语言</a>
+											</li>
+											<li>
+												<span>
+													<i class="icon-feedback"></i>
+												</span>
+												<a href="#" title="">发送反馈</a>
+											</li>
+											<li>
+												<span>
+													<i class="icon-location"></i>
+												</span>
+												<a href="#" title="">位置</a>
+												<i class="icon-arrow_below"></i>
+											</li>
+										</ul>
+									</div><!--sd_menu end-->
+									<div class="restricted-mode">
+										<h4>限制模式</h4>
+										<label class="switch">
+											<input type="checkbox" checked>
+											<span class="slider round"></span>
+										</label>
+										<div class="clearfix"></div>
+									</div><!--restricted-more end-->
+								</div>
+							</li>
+						
+						</ul><!--controls-lv end-->
+						<div class="clearfix"></div>
+					</div><!--top_header_content end-->
+				</div>
+			</div><!--header_content end-->
+		</header>
+		<div class="side_menu">
+
+			<div class="sd_menu">
+				<ul class="mm_menu">
+					<li>
+						<span>
+							<i class="icon-home"></i>
+						</span>
+						<a href="#" title="">首页</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-fire"></i>
+						</span>
+						<a href="#" title="">测试功能</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-subscriptions"></i>
+						</span>
+						<a href="#" title="">订阅内容</a>
+					</li>
+				</ul>
+			</div><!--sd_menu end-->
+			<div class="sd_menu">
+				<h3>Library</h3>
+				<ul class="mm_menu">
+					<li>
+						<span>
+							<i class="icon-history"></i>
+						</span>
+						<a href="#" title="">历史记录</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-watch_later"></i>
+						</span>
+						<a href="#" title="">稍后观看</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-purchased"></i>
+						</span>
+						<a href="#" title="">购买</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-like"></i>
+						</span>
+						<a href="#" title="">喜欢的视频</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-play_list"></i>
+						</span>
+						<a href="#" title="">播放列表</a>
+					</li>
+				</ul>
+			</div><!--sd_menu end-->
+			<div class="sd_menu subs_lst">
+				<h3>订阅内容</h3>
+				<ul class="mm_menu">
+					<li>
+						<span class="usr_name">
+							<img src="images/resources/th1.png" alt="">
+						</span>
+						<a href="#" title="">Dr Disrespect</a>
+						<small>3</small>
+					</li>
+					<li>
+						<span class="usr_name">
+							<img src="images/resources/th2.png" alt="">
+						</span>
+						<a href="#" title="">ASMR</a>
+						<small>6</small>
+					</li>
+					<li>
+						<span class="usr_name">
+							<img src="images/resources/th3.png" alt="">
+						</span>
+						<a href="#" title="">Rivvrs</a>
+						<small>2</small>
+					</li>
+					<li>
+						<span class="usr_name">
+							<img src="images/resources/th4.png" alt="">
+						</span>
+						<a href="#" title="">The Verge</a>
+						<small>11</small>
+					</li>
+					<li>
+						<span class="usr_name">
+							<img src="images/resources/th5.png" alt="">
+						</span>
+						<a href="#" title="">Seeker</a>
+						<small>3</small>
+					</li>
+					<li>
+						<span class="usr_name">
+							<img src="images/resources/sn.png" alt="">
+						</span>
+						<a href="#" title="">Music</a>
+						<small>20</small>
+					</li>
+				</ul>
+				<a href="#" title="" class="more-ch"><i class="icon-arrow_below"></i> Show 14 more</a>
+			</div><!--sd_menu end-->
+			<div class="sd_menu">
+				<ul class="mm_menu">
+					<li>
+						<span>
+							<i class="icon-settings"></i>
+						</span>
+						<a href="#" title="">设置</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-flag"></i>
+						</span>
+						<a href="#" title="">发送反馈</a>
+					</li>
+					<li>
+						<span>
+							<i class="icon-logout"></i>
+						</span>
+						<a href="#" title="">注销</a>
+					</li>
+				</ul>
+			</div><!--sd_menu end-->
+			<div class="sd_menu m_linkz">
+				<ul class="mm_menu">
+					
+					<li><a href="#">关于</a></li>
+					<li><a href="#">社区规则 </a></li>
+					<li><a href="#">隐私</a></li>
+					<li><a href="#">条款</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+				<span>azyrusthemes</span>
+			</div><!--sd_menu end-->
+			<div class="sd_menu bb-0">
+				<ul class="social_links">
+					<li>
+						<a href="#" title="">
+							<i class="weibo"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="">
+							<i class="wechat"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="">
+							<i class="qq"></i>
+						</a>
+					</li>
+				</ul><!--social_links end-->
+			</div><!--sd_menu end-->
+			<div class="dd_menu"></div>
+		</div><!--side_menu end-->
+
+		<section class="banner-section">
+			<div class="container">
+				<div class="banner-text">
+					<h2>课件视频与学生的互动的解决方案</h2>
+					<p1>互动视频用最简易的方法制作视频并加上互动效果，降低了制作视频游戏的门槛，开创了多个故事线主线制作方式</p1>
+					<h3>互动视频</h3>
+					<!--  <button id="updata"  ></button>  -->
+					<a id="join" style="height: 0px;" href="login.html">
+						<img id="tttt" src="images/join.png" style="position:relative;left:0;" width="200" height="130">
+					</a>
+					<a id="updata" style="height: 0px;" href="#">
+						<img id="tttt" src="images/videobutton.png" style="position:relative;left:0;" width="200" height="130">
+					</a>
+				</div><!--banner-text end-->
+				<h3 class="headline"> <a href="#" title=""></a></h3>
+			</div>
+		</section><!--banner-section end-->
+
+		<section class="services-sec">
+			<div class="container">
+				<div class="services-row">
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<div class="service-col">
+								<img src="images/sv1.png" alt="">
+								<h3>假如历史有如果</h3>
+								<p>通过互动视频了解历史</p>
+							</div><!--service-col end-->
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<div class="service-col">
+								<img src="images/sv2.png" alt="">
+								<h3>安全教育</h3>
+								<p>了解在灾难中如何求生 </p>
+							</div><!--service-col end-->
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<div class="service-col">
+								<img src="images/sv3.png" alt="">
+								<h3>互动实验</h3>
+								<p>用互动视频做实验</p>
+							</div><!--service-col end-->
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<div class="service-col">
+								<img src="images/sv4.png" alt="">
+								<h3>知识</h3>
+								<p>丰富的课程知识</p>
+							</div><!--service-col end-->
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+							<div class="service-col">
+								<img src="images/sv5.png" alt="">
+								<h3>多线性故事</h3>
+								<p>多种可能性的故事</p>
+							</div><!--service-col end-->
+						</div>
+					</div>
+				</div><!--services-row end-->
+			</div>
+		</section><!--services-sec end-->
+
+		<section class="vds-main">
+			<div class="vidz-row">
+				<div class="container">
+					<div class="vidz_sec">
+						<h3>推荐故事</h3>
+						<div class="vidz_list">
+							<div class="row" id="FeaturedVideo">
+								
+							</div>
+						</div><!--vidz_list end-->
+					</div><!--vidz_videos end-->
+				</div>
+			</div><!--vidz-row end-->
+			<div class="vidz-row">
+				<div class="container">
+					<div class="vidz_sec">
+						<h3>最新视频</h3>
+						<a href="#" title="" class="view-btn">View all</a>
+						<div class="vidz_list">
+							<div class="row">
+								
+							</div><!--video--row-->
+						</div><!--vidz_list end-->
+					</div><!--vidz_videos end-->
+				</div>
+			</div><!--vidz-row end-->
+			<div class="vidz-row">
+				<div class="container">
+					<div class="vidz_sec">
+						<h3>在线网课</h3>
+						<div class="vidz_list">
+							<div class="row">
+								
+							</div><!--video-row end-->
+						</div><!--vidz_list end-->
+					</div><!--vidz_videos end-->
+				</div>
+			</div><!--vidz-row end-->
+			<div class="vidz-row">
+				<div class="container">
+					<div class="vidz_sec">
+						<h3>安全教育</h3>
+						<div class="vidz_list">
+							<div class="row">
+
+							</div>
+						</div><!--vidz_list end-->
+					</div><!--vidz_videos end-->
+				</div>
+			</div><!--vidz-row end-->
+			<div class="vidz-row pop_channels">
+				<div class="container">
+					<div class="vidz_sec">
+						<h3>假如历史有如果</h3>
+						<div class="vidz_list">
+							<div class="row">
+								
+								
+							</div>
+						</div><!--vidz_list end-->
+					</div><!--vidz_videos end-->
+				</div>
+			</div><!--vidz-row end-->
+		</section><!--vds-main end-->
+
+
+	</div><!--wrapper end-->
+
+
+
+	<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/popper.js"></script>
+	<script language="javascript" type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/flatpickr.js"></script>
+	<script language="javascript" type="text/javascript" src="js/script.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script language="javascript" type="text/javascript" src="js/sweetalert.min.js"></script>
+
+	<script>
+		function meizz(e) {
+            $.cookie("video_name", $($(e).parent().parent().find('.VideoName')[0]).html());
+            console.log($(e).parent().parent().find('.VideoName')[0]);
+			window.location.href = 'demo3.html';
+			console.log('测试');
+		}
+
+		window.user_name = "";
+		var isos = "";
+		window.onload = function () {
+
+            var os = function () {
+                var ua = navigator.userAgent,
+                    isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                    isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                    isAndroid = /(?:Android)/.test(ua),
+                    isFireFox = /(?:Firefox)/.test(ua),
+                    isChrome = /(?:Chrome|CriOS)/.test(ua),
+                    isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+                    isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                    isPc = !isPhone && !isAndroid && !isSymbian;
+                return {
+                    isTablet: isTablet,
+                    isPhone: isPhone,
+                    isAndroid: isAndroid,
+                    isPc: isPc
+                };
+            }();
+
+            if (os.isAndroid || os.isPhone) {
+                isos = "手机";//alert("手机")
+            } else if (os.isTablet) {
+                isos = "平板";//alert("平板")
+            } else if (os.isPc) {
+                isos = "电脑"; //alert("电脑")
+            }
+
+
+			$.ajax({
+				url: './php/cookie.php',
+				type: "post",
+				dataType: "json",
+				success: function (data) {
+					console.log(data);
+					if (data.code) {
+						window.islogin = true;
+						$('#logicon').addClass('d-none')
+						$('#usericon').removeClass('d-none')
+						$('#logout').removeClass('d-none')
+						$('#usericon').html(`你好，${data.user_name}`)
+						window.user_name = data.user_name;
+                        $("#updata").attr('href', `updata.html?user_name=${user_name}&isos=${isos}`);
+                        console.log($("#updata").attr('href'));
+					} else {
+						$('#usericon').html('未登录');
+						window.islogin = false;
+						window.user_name = "";
+						$(".side_menu").append(`<div class="form_dvv"> <a href="login.html" title="" class="login_form_show">登录</a></div>`);
+					}
+
+				},
+				error: function (error) {
+					console.log(error)
+				}
+			})
+
+          
+
+            $.ajax({
+                url: './php/GetVideoList.php',
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data[0].video_main_url);
+					for (i = 0; i < data.length - 1; i++) {
+                        GetVideoList(data[i].video_name, data[i].video_id, data[i].user_name, data[i].video_img, data[i].video_main_url);
+					}
+
+            
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+
+          
+
+
+			function GetVideoList(video_name,video_id,user_name,video_img,video_main_url) {
+				$('#FeaturedVideo').append(`
+                               <div class="col-lg-3 col-md-6 col-sm-6 col-6 full_wdth">
+									<div class="videoo">
+										<div class="vid_thumbainl">
+											<a class="playvideo" href="demo3.html?video_main=${video_id}" onclick="meizz(this)" title="">
+												<img src="${video_img}" alt="">
+												<span class="vid-time">10:21</span>
+												<span class="watch_later">
+													<i class="icon-watch_later_fill"></i>
+												</span>
+											</a>
+										</div><!--vid_thumbnail end-->
+										<div class="video_info">
+											<h3><a class="VideoName" id="" href="demo3.html" title="">${video_name}</a></h3>
+											<h4><a href="Single_Channel_Home.html" title="">${user_name}</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+											<span>686K views .<small class="posted_dt">1 week ago</small></span>
+										</div>
+									</div><!--videoo end-->
+								</div>`);
+
+			}
+
+		
+
+
+
+			////  分类点击事件
+			//$(".videType li").click(function () {
+			//    let _this = $(this);
+			//    $(".videType li").removeClass('active');
+			//    _this.addClass('active');
+			//    videoType(_this.html())
+			//    console.log(_this.html());
+			//})
+
+			//videoType('全部');
+			//// 获取视频数据
+			//function videoType(type) {
+			//    $.ajax({
+			//        url: 'php/videoType.php',
+			//        type: 'get',
+			//        dataType: 'json',
+			//        data: {
+			//            "video_type": type
+			//        },
+			//        success: function (data) {
+			//            $(".videoList").html('');
+			//            if (data != 0) {
+			//                $("#noVideo").addClass('d-none');
+			//                for (let i = 0; i < data.length; i++) {
+			//                    let oHtml = `<div class="col-3 with-hand" data-id="${data[i].video_id}">
+			//  <video src="${data[i].video_head}"
+			//    class="w-100"></video>
+			//  <p class="py-3">${data[i].video_name}</p>
+			//</div>`;
+			//                    $(".videoList").html($(".videoList").html() + oHtml);
+			//                }
+			//                // 点击视频跳转
+			//                $(".col-3").click(function () {
+			//                    let _this = $(this);
+			//                    let video_id = _this.attr('data-id');
+			//                    window.open("play.html" + '?id=' + video_id);
+			//                })
+			//            } else {
+			//                $("#noVideo").removeClass('d-none');
+			//            }
+			//        },
+			//        error: function (err) {
+			//            console.log(err);
+			//        }
+			//    })
+			//}
+
+
+
+			//  注册请求
+			$('#signUp').click(function () {
+				let email = $('#signEmail').val()
+				let password = $('#signpassword').val()
+				$("#signErrorMessage").addClass('d-none')
+				if (checkEmail(email) && checkPasswrod(password)) {
+					var data = {
+						"user_name": $('#userName').val(),
+						"user_email": email,
+						"user_password": password
+					}
+					//验证
+					$.ajax({
+						url: 'php/register.php',
+						type: "post",
+						dataType: "JSON",
+						data: data,
+						success: function (data) {
+							console.log(data);
+							//  判断账号是否已经被注册
+							if (data.code) {
+								//  清空表单数据
+								$('#userName').val('')
+								$('#signEmail').val('')
+								$('#signpassword').val('')
+								$('#modal-popup').modal('hide')
+								swal({
+									icon: "success",
+									title: "注册成功",
+									text: "马上登陆"
+								}).then(() => {
+									//  注册成功后跳转到登录tab
+									$('#modal-popup').modal('show')
+									$('#modal-popup li:first-child a').tab('show')
+								})
+							} else {
+								$('#signErrorMessage').removeClass('d-none')
+								$('#signErrorMessage').html(data.msg)
+							}
+						},
+						error: function (err) {
+							window.console.log(err)
+						}
+					})
+				} else {
+					$('#signErrorMessage').removeClass('d-none')
+					$('#signErrorMessage').html(errorMessage)
+				}
+			})
+
+			//  校验邮箱
+			function checkEmail(email) { // check if empty of email and pattern the emaill
+				if (email.length === 0) {
+					errorMessage = '邮箱地址不能为空'; return false
+				} else {
+					const pattern = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}$/ // 匹配邮件正则
+					if (!pattern.test(email)) {
+						errorMessage = '邮箱地址无效'; return false
+					} else {
+						return true
+					}
+				}
+			}
+
+			//  检验密码
+			function checkPasswrod(password) { // check if empty of password
+				if (password.length === 0) {
+					errorMessage = '密码不能为空'; return false
+				} else {
+					if (password.length < 6 || password.length > 18) {
+						errorMessage = '密码应该在6-18位之间'; return false
+					} else {
+						return true
+					}
+				}
+			}
+
+			//  登出请求
+			$('#logout').click(function () {
+				$.ajax({
+					url: `php/login.php`,
+					dataType: 'json',
+					data: { 'act': 'logout' },
+					type: 'post',
+					success: function (data) {
+						if (data.msg) {
+							swal("成功退出", {
+								icon: "success",
+								buttons: false,
+								timer: 2000
+							}).then((value) => {
+								//  退出成功后隐藏用户头像
+								$('#usericon').html('未登录');
+								window.islogin = false;
+								$(".account-menu").slideUp();
+								$(".form_dvv").remove();
+								$.cookie('user_name', null, { path: "/", expires: -1 });
+								$.cookie('user_password', null, { path: "/", expires: -1 });
+								window.location.href = 'index.html';
+								window.localStorage.clear();
+							})
+						}
+
+					},
+					error: function (err) {
+						window.console.log(err)
+					}
+				})
+			})
+
+
+			
+
+			//  跳转到创作中心
+		/*	$('#updata').click(function () {
+
+				if (isos == "电脑") {
+					$.ajax({
+						url: 'php/updata.php',
+						type: "post",
+						dataType: "json",
+						data: { "state": "frist_upload_video" },
+						success: function (data) {
+							console.log(data);
+							if (data.code == 1) {
+								//window.localStorage.setItem('user_id', data.user_id);
+								window.location = data.src;
+							} else if (data.code == 0) {
+								swal('提示', '未登录', 'error');
+
+							} 
+						},
+						error: function (error) {
+							console.log(error)
+						}
+					})
+				} else {
+                    swal('提示', '本页面不支持手机登录', 'error');
+                }
+
+			})
+			*/
+
+
+
+
+		}
+
+
+
+	</script>
+
+
+
+</body>
+
+</html>

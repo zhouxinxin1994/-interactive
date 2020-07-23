@@ -1,0 +1,10 @@
+/* core */
+div.fasterLink { width:980px;margin:0 auto; text-align:left; padding-top:10px;   border-top:2px #313140 solid; clear:both; height:295px;}
+div.fasterLink p{ padding-left:30px; line-height:24px;color:white;}
+div.fasterLink h5{ padding-left:30px; line-height:40px;color:#fff100;}
+div.fasterLink dl.other { line-height:24px;  width:152px; float:left; margin-left:10px; }
+div.fasterLink dl.other dt{ padding-left:10px;font-weight:bold; color:#000000; font-size:14px;}
+div.fasterLink dl.other dd{ padding-left:10px; }
+div.fasterLink dl.other dd a,div.fasterLink dl.other dd a:hover,div.fasterLink dl.other dd a:visited{ color:#333333;line-height:24px;}
+ 
+ 

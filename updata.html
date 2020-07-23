@@ -1,0 +1,1714 @@
+﻿<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="text/html">
+    <title>上传视频</title>
+    <link rel="stylesheet" href="./font class/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/test.css">
+    <link rel="icon" href="images/Favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-wondershare.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello-codes.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/color.css">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/thumbs-embedded.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+    <style>
+
+        * {
+            user-select: none;
+        }
+
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .header {
+            width: 100%;
+            padding-right: 20px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            border-bottom: 1px solid rgb(202, 201, 201);
+            text-indent: 20px;
+        }
+
+        .main-wrapper {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+            .main-wrapper .left {
+                width: 15%;
+                height: 100%;
+                padding: 15px;
+                box-sizing: border-box;
+                float: left;
+                border-right: 1px solid rgb(202, 201, 201);
+            }
+
+                .main-wrapper .left .top {
+                    width: 100%;
+                    color: rgb(124, 124, 124);
+                }
+
+                    .main-wrapper .left .top .title {
+                        height: 40px;
+                        line-height: 40px;
+                        font-size: 14px;
+                    }
+
+                    .main-wrapper .left .top button {
+                        width: 120px;
+                        height: 30px;
+                        border: none;
+                        border-radius: 20px;
+                        background-color: rgb(238, 122, 55);
+                        color: #fff;
+                        cursor: pointer;
+                        outline: none;
+                        margin: 15px 20px;
+                    }
+
+        #dataList {
+            height: 400px;
+            position: relative;
+        }
+
+            #dataList .tip {
+                position: absolute;
+                line-height: 30px;
+                width: 91%;
+                top: 40%;
+                left: 20px;
+                text-align: center;
+                color: rgb(124, 124, 124);
+            }
+
+        .main-wrapper .right {
+            width: 85%;
+            height: 100%;
+            float: left;
+            overflow: hidden;
+        }
+
+            .main-wrapper .right .title {
+                height: 100px;
+                padding-right: 20px;
+                line-height: 100px;
+                font-size: 20px;
+                text-align: center;
+                letter-spacing: 20px;
+                border-bottom: 1px solid rgb(202, 201, 201);
+            }
+
+            .main-wrapper .right .content {
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(90deg, rgba(180, 180, 180, 0.15) 10%, rgba(0, 0, 0, 0) 10%), linear-gradient(rgba(180, 180, 180, 0.15) 10%, rgba(0, 0, 0, 0) 10%);
+                background-size: 20px 20px;
+                box-sizing: border-box;
+                float: left;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .main-wrapper .right #content-wrapper {
+                position: absolute;
+            }
+
+                .main-wrapper .right #content-wrapper .branch {
+                    width: 160px;
+                    height: 120px;
+                    border-radius: 10px;
+                    box-shadow: 4px 4px 20px rgb(184, 184, 184);
+                    background-color: #fff;
+                    font-size: 14px;
+                }
+
+        #head-branch {
+            top: 50px;
+            left: 20px;
+        }
+
+        .main-wrapper .right #content-wrapper .img-wrapper {
+            height: 90px;
+            background-color: rgb(158, 157, 157);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            position: relative;
+        }
+
+            .main-wrapper .right #content-wrapper .img-wrapper .head-text {
+                width: 65px;
+                height: 25px;
+                line-height: 25px;
+                background-color: rgb(240, 122, 68);
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: #fff;
+                text-align: center;
+            }
+
+            .main-wrapper .right #content-wrapper .img-wrapper .icon-jia {
+                position: absolute;
+                bottom: -10px;
+                right: 10px;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: rgb(76, 104, 239);
+                border-radius: 50%;
+                text-align: center;
+                line-height: 20px;
+                cursor: pointer;
+                outline: none;
+            }
+
+        .main-wrapper .right #content-wrapper p {
+            height: 30px;
+            line-height: 30px;
+            margin: 0;
+            text-indent: 10px;
+        }
+
+        #videoFile {
+            margin-top: 40px;
+            text-align: center;
+            height: 85%;
+            overflow: auto;
+            display: none;
+        }
+
+            #videoFile li video {
+                width: 85%;
+                height: 90px;
+                border-radius: 10px;
+            }
+
+            #videoFile li p {
+                font-size: 14px;
+            }
+
+      
+
+
+        .icon-edit {
+            display: inline-block;
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+        }
+
+        .but {
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .btn-cancel {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+            .btn-cancel:hover {
+                color: #fff;
+                background-color: #5a6268;
+                border-color: #545b62;
+            }
+
+        .btn-save {
+            color: #fff;
+            background-color: rgb(238, 122, 55);
+            border-color: rgb(238, 122, 55);
+        }
+
+            .btn-save:hover {
+                color: #fff;
+                background-color: rgb(247, 110, 30);
+                border-color: rgba(250, 119, 44, 0.925);
+            }
+
+
+        .videolist_menu {
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 400px;
+            background-color: #faf8f8;
+            height: 100%;
+            z-index: 3;
+            border-left: 3px;
+            border-left-color: black;
+            opacity: 0;
+            visibility: hidden;
+            overflow-y: auto;
+            display: block !important;
+        }
+
+            .videolist_menu.active {
+                position: absolute;
+                opacity: 1;
+                visibility: visible;
+                right: 0;
+            }
+
+
+        .videoList {
+            position: relative;
+            top: 40px;
+            left: 20px;
+            display: block;
+            width: 100%;
+            z-index: 4;
+        }
+
+
+
+            .videoList li {
+                display: table;
+                height: 40px;
+                width: 200px;
+            }
+
+                .videoList li div.txt_name {
+                    position: relative;
+                    width: 500px;
+                    top: 10px;
+                    height: 15px;
+                    float: left;
+                    z-index: 5;
+                }
+
+                .videoList li .deletetxt {
+                    position: absolute;
+                    margin-top: 4px;
+                    right: 40px;
+                    height: 20px;
+                    width: 20px;
+                    float: right;
+                    visibility: hidden;
+                    opacity: 0;
+                    z-index: 7;
+                }
+
+                    .videoList li .deletetxt.active {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                .videoList li a i.cloes {
+                    position: absolute;
+                    background: url(images/webuismall.png) no-repeat;
+                    background-position: -100px -62px;
+                    margin-top: 0px;
+                    height: 30px;
+                    width: 30px;
+                }
+
+
+
+
+                .videoList li div a {
+                    display: table-cell;
+                    text-align: center;
+                    width: 100%;
+                    color: darkslateblue;
+                    font-size: 16px;
+                    line-height: 19px;
+                    padding-left: 27px;
+                }
+
+        .deletehtml {
+            background: url(images/player.png) no-repeat;
+            background-position: -300px -100px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 40px;
+            width: 40px;
+        }
+
+            .deletehtml.active {
+                display: block;
+            }
+
+        .cloesList {
+            background: url(images/player.png) no-repeat;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            height: 40px;
+            width: 40px;
+            background-position: -300px -100px;
+        }
+
+        .videoDelete {
+            position: relative;
+            padding-bottom: 0px;
+            background: url(images/webuismall.png) no-repeat;
+            background-position: -96px -65px;
+            padding-left: 30px;
+            height: 20px;
+            width: 20px;
+        }
+
+        .progessbg {
+            position: fixed;
+            top: 0;
+            height: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progessbg"></div>
+    <header>
+
+        <div class="top_bar">
+            <div class="container">
+                <div class="top_header_content">
+                    <div class="menu_logo">
+                        <a href="#" title="" class="menu">
+                            <i class="icon-menu"></i>
+                        </a>
+                        <a href="index.html" title="" class="logo">
+                            <img src="images/logo2(small).png" height="80" width="170">
+                        </a>
+                    </div><!--menu_logo end-->
+
+                    <ul class="controls-lv" style="right: 20px;">
+                        <li style="display: block !important;">
+                            <button id="newproject" title="" class="btn-default" style="background-color: #4c68ef;">新建项目</button>
+                        </li>
+                        <li style="display: block !important;">
+                            <button id="videolist" title="" class="btn-default" style="background-color: #4c68ef;">项目工程</button>
+                        </li>
+                        <li style="display:block !important;">
+                            <button id="savelist" title="" class="btn-default" style="background-color: #4c68ef;">保存</button>
+                        </li>
+                        <li style="display:block !important;">
+                            <button id="release" title="" class="btn-default" style="background-color: #4c68ef;">发布</button>
+                        </li>
+                        <li class="user-log">
+                            <div class="user-ac-img" id="">
+                                <img src="images/resources/user(small).png" alt="">
+                            </div>
+                            <div class="account-menu">
+                                <h4>测试用户 <span class="usr-status">专业版</span></h4>
+                                <div class="sd_menu">
+                                    <ul class="mm_menu">
+                                        <li>
+                                            <span>
+                                                <i class="icon-user"></i>
+                                            </span>
+                                            <a href="#" title="">我的频道</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-paid_sub"></i>
+                                            </span>
+                                            <a href="#" title="">测试功能</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-settings"></i>
+                                            </span>
+                                            <a href="#" title="">设置</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-logout"></i>
+                                            </span>
+                                            <a id="logout" title="">退出</a>
+                                        </li>
+                                    </ul>
+                                </div><!--sd_menu end-->
+                                <div class="sd_menu scnd">
+                                    <ul class="mm_menu">
+                                        <li>
+                                            <span>
+                                                <i class="icon-light"></i>
+                                            </span>
+                                            <a href="#" title="">夜晚模式</a>
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <b class="slider round"></b>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-language"></i>
+                                            </span>
+                                            <a href="#" title="">语言</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-feedback"></i>
+                                            </span>
+                                            <a href="#" title="">发送反馈</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-location"></i>
+                                            </span>
+                                            <a href="#" title="">位置</a>
+                                            <i class="icon-arrow_below"></i>
+                                        </li>
+                                    </ul>
+                                </div><!--sd_menu end-->
+                                <div class="restricted-mode">
+                                    <h4>限制模式</h4>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <div class="clearfix"></div>
+                                </div><!--restricted-more end-->
+                            </div>
+                        </li>
+                    </ul><!--controls-lv end-->
+                    <div class="clearfix"></div>
+
+                </div><!--top_header_content end-->
+            </div>
+        </div><!--header_content end-->
+    </header>
+    <div class="side_menu">
+        <div class="sd_menu">
+            <ul class="mm_menu">
+                <li>
+                    <span>
+                        <i class="icon-home"></i>
+                    </span>
+                    <a href="#" title="">首页</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-fire"></i>
+                    </span>
+                    <a href="#" title="">测试功能</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-subscriptions"></i>
+                    </span>
+                    <a href="#" title="">订阅内容</a>
+                </li>
+            </ul>
+        </div><!--sd_menu end-->
+        <div class="sd_menu">
+            <h3>Library</h3>
+            <ul class="mm_menu">
+                <li>
+                    <span>
+                        <i class="icon-history"></i>
+                    </span>
+                    <a href="#" title="">历史记录</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-watch_later"></i>
+                    </span>
+                    <a href="#" title="">稍后观看</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-purchased"></i>
+                    </span>
+                    <a href="#" title="">购买</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-like"></i>
+                    </span>
+                    <a href="#" title="">喜欢的视频</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-play_list"></i>
+                    </span>
+                    <a href="#" title="">播放列表</a>
+                </li>
+            </ul>
+        </div><!--sd_menu end-->
+        <div class="sd_menu subs_lst">
+            <h3>订阅内容</h3>
+            <ul class="mm_menu">
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th1.png" alt="">
+                    </span>
+                    <a href="#" title="">Dr Disrespect</a>
+                    <small>3</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th2.png" alt="">
+                    </span>
+                    <a href="#" title="">ASMR</a>
+                    <small>6</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th3.png" alt="">
+                    </span>
+                    <a href="#" title="">Rivvrs</a>
+                    <small>2</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th4.png" alt="">
+                    </span>
+                    <a href="#" title="">The Verge</a>
+                    <small>11</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th5.png" alt="">
+                    </span>
+                    <a href="#" title="">Seeker</a>
+                    <small>3</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/sn.png" alt="">
+                    </span>
+                    <a href="#" title="">Music</a>
+                    <small>20</small>
+                </li>
+            </ul>
+            <a href="#" title="" class="more-ch"><i class="icon-arrow_below"></i> Show 14 more</a>
+        </div><!--sd_menu end-->
+        <div class="sd_menu">
+            <ul class="mm_menu">
+                <li>
+                    <span>
+                        <i class="icon-settings"></i>
+                    </span>
+                    <a href="#" title="">设置</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-flag"></i>
+                    </span>
+                    <a href="#" title="">发送反馈</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-logout"></i>
+                    </span>
+                    <a href="#" title="">注销</a>
+                </li>
+            </ul>
+        </div><!--sd_menu end-->
+        <div class="sd_menu m_linkz">
+            <ul class="mm_menu">
+                <li><a href="#">关于</a></li>
+                <li><a href="#">社区规则 </a></li>
+                <li><a href="#">隐私</a></li>
+                <li><a href="#">条款</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+            <span>azyrusthemes</span>
+        </div><!--sd_menu end-->
+        <div class="sd_menu bb-0">
+            <ul class="social_links">
+                <li>
+                    <a href="#" title="">
+                        <i class="weibo"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <i class="wechat"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <i class="qq"></i>
+                    </a>
+                </li>
+            </ul><!--social_links end-->
+        </div><!--sd_menu end-->
+        <div class="dd_menu"></div>
+    </div><!--side_menu end-->
+    <div class="videolist_menu" style="top:89px">
+        <div class="cloesList"></div>
+        <ul class="videoList">
+        </ul>
+    </div>
+    <div class="header">互动视频编辑器<div class="projectName" style="position:relative;top:-50px;left:120px;" value="中文" ></div></div>
+    <div class="main-wrapper">
+        <div class="left">
+            <div class="top">
+                <div class="title">素材库</div>
+                <input type="file" id="upfile" name="upfile" style="display: none;" multiple="multiple">
+                <button id="imgData" style="background-color: #636363;"><i class="iconfont icon-shipin"></i> 添加素材</button>
+            </div>
+            <div id="dataList">
+                <div class="tip">你还没有上传视频素材，请上传视频</div>
+            </div>
+            <ul id="videoFile">
+            </ul>
+        </div>
+        <div class="right">
+            <div class="title">时间轴</div>
+            <div class="content p-5">
+                <div id="content-wrapper">
+                    <div class="branch position-relative" src="" name="" id="head-branch" data-question="是否继续学习"
+                         data-answer1='' data-answer2='' data-answer3='' data-answer4=''>
+                        <div class="branch-content">
+                            <div class="img-wrapper">
+                                <video class="video_img" src="" id="video_main"  name="" style="width:100%; height:100%; object-fit: fill">
+                                </video>
+                                <img class="video_img" src="" alt="">
+                                <span class="head-text" style="        background-color: #4c68ef;">片头</span>
+                                <span class="icon icon-jia"><i class="iconfont icon-jia1"></i></span>
+                                <img src="images/editor.svg" alt="" class="img-fliud icon-edit d-none" data-toggle="modal"
+                                     data-target="#modal-edit">
+                                <img src="images/fold.svg" alt="" class="img-fluid position-absolute d-none icon-fold"
+                                     style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                <img src="images/open.svg" alt="" class="img-fluid position-absolute d-none icon-open"
+                                     style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                            </div>
+                            <p class="text">拖入视频</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-edit">
+            <div class="modal-dialog ">
+                <div class="modal-content with-box-shadow p-3 bg-white text-center font-size-small"
+                     style="border-radius: 4px;border: 0;width: 400px;height: auto;">
+                    <div class="modal-body">
+                        <div class="py-3 border-bottom font-weight-bolder">选项分支编辑</div>
+                        <div class="form-group pt-3">
+                            <label for="question">选项问题</label>
+                            <input type="text" class="ml-3 border-radius pl-3 w-75" id="question" placeholder="选填">
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>选项</th>
+                                    <th>选项内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr id="tr-answer1">
+                                    <td>A</td>
+                                    <td><input type="text" name="" id="answer1" placeholder="选填" class="pl-3"></td>
+                                </tr>
+                                <tr id="tr-answer2">
+                                    <td>B</td>
+                                    <td><input type="text" name="" id="answer2" placeholder="选填" class="pl-3"></td>
+                                </tr>
+                                <tr id="tr-answer3">
+                                    <td>C</td>
+                                    <td><input type="text" name="" id="answer3" placeholder="选填" class="pl-3"></td>
+                                </tr>
+                                <tr id="tr-answer4">
+                                    <td>D</td>
+                                    <td><input type="text" name="" id="answer4" placeholder="选填" class="pl-3"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="font-size-tiny text-gray-7">注：选项顺序按分支顺序对应</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="but btn-cancel" data-dismiss="modal">取消</button>
+                        <button type="button" class="but btn-save" id="question-save">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/popper.js"></script>
+    <script language="javascript" type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/flatpickr.js"></script>
+    <script language="javascript" type="text/javascript" src="js/script.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script language="javascript" type="text/javascript" src="js/sweetalert2.min.js"></script>
+
+
+    <script>
+
+
+        window.onload = function () {
+            var _name = '';
+            var thisProjectName = {};
+            Object.defineProperty(thisProjectName, 'name', {
+                get: function (value) {
+                    // get 和 set 方法
+                    return _name;
+                },
+                set: function (value) {
+                    _name=value;
+                    isnewproject();
+                    // 当listenMenuTree 的value值发生改变时，触发set函数的内容
+                }
+            });
+            let oFile = document.getElementById('upfile');
+            let oContentWrapper = document.getElementById('content-wrapper');
+            let Videofle = document.getElementById('videoFile');
+            getvideolist(thisProjectName.name);
+
+            isnewproject();
+
+            function isnewproject() {
+
+                if (thisProjectName.name == '') {
+                    $("#imgData").attr('disabled', true);
+                    $("#savelist").attr('disabled', true);
+                    $("#imgData").attr('style', 'background-color: #636363;');
+                    $("#savelist").attr('style', 'background-color: #636363;');
+                    this.console.log(thisProjectName.name);
+                } else {
+                    $("#imgData").attr('disabled', false);
+                    $("#savelist").attr('disabled', false);
+                    $("#imgData").attr('style', 'background-color: #4c68ef;');
+                    $("#savelist").attr('style', 'background-color: #4c68ef;');
+                    this.console.log(thisProjectName.name);
+                }
+            }
+
+            //gethtmllist();
+
+            //  监听当前点击的是哪个元素
+            // $(document).mousedown(function (e) {
+            //     console.log($(e.target));  //当前点击的元素
+            // })
+            sendCookie();
+
+            function sendCookie() {
+                $.ajax({
+                    url: 'php/cookie.php',
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.code) {
+                            window.islogin = true;
+                            $('h4').html(data.user_name);
+                        } else {
+                            window.islogin = false;
+                        }
+
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+            }
+
+
+            $('#newproject').on('click', function () {
+                swal({
+                    title: '新建项目名称',
+                    input: 'text',
+                    showCancelButton: true,
+                    confirmButtonText: '是',
+                    cancelButtonText:'否',
+                    inputValidator: function (value) {
+                        return new Promise(function (resolve, reject) {
+                            if (value) {
+                                resolve();
+                            } else {
+                                reject('请输入项目名称');
+                            }
+                        });
+                    }
+                }).then(function (result) {
+                    if (result) {
+                        console.log("创建项目");
+                          $.ajax({
+                            url: 'php/newproject.php',
+                            type: "post",
+                            dataType: "json",
+                            data: { "user_name": $.cookie("user_name"), "project_name":result},
+                            success: function (data) {
+                                console.log(data);
+                                swal({
+                                    type: 'success',
+                                    html: '创建新项目 ' + result
+                                });
+                                thisProjectName.name = result;
+                                console.log(thisProjectName);
+                                $('.projectName').html("-----" + thisProjectName.name);
+                                $('.videoList').empty();
+                                $('.content-wrapper').empty();
+                                $('.videoFile').empty();
+                                getvideolist(thisProjectName.name);
+                                listhtmlText();
+                            },
+                            error: function (error) {
+                                console.log(error)
+                            }
+                        });
+                       
+
+
+                    }
+                })
+                
+                    
+                //swal({
+                //    title: "新建工程",
+                //    text: "新建工程文件名",
+                //    type: "input",
+                //    showCancelButton: true,
+                //    closeOnConfirm: false,
+                //    inputPlaceholder: "输入信息",
+                //},
+                //    function (inputValue) {
+                //        if (inputValue === false) return false;
+
+                //        if (inputValue === "") {
+                //            swal.showInputError("内容不能为空，请输入一些信息！");
+                //            return false
+                //        }
+
+                //        swal("提示", "保存成功: " + inputValue, "success");
+                //    });
+
+               
+
+            })
+
+            //添加视频素材
+            $upFile = $("#upfile");
+            $("#imgData").click(function () {
+                $('#upfile').val("");
+                $upFile.click();
+                $upFile.off("change").on('change', (function () {
+                    // console.log(oFile.files.length);
+                    var isname = 0;
+                    for (let i = 0; i < oFile.files.length; i++) {
+                        if (oFile.files[i].name.length > 32) {
+                            isname = 1;
+                            swal("字符应小于32");
+                        }
+                        if (oFile.files[i].name.indexOf(" ") != -1) {
+                            isname = 2;
+                            swal("提示","有非法字符，请重新命名","error");
+
+                        }
+
+                    }
+                  
+                   if (isname==0) {
+                        for (let i = 0; i < oFile.files.length; i++) {
+                            console.log(oFile.files[i]);
+                            
+                            upFile(oFile.files[i], oFile.files[i].name, thisProjectName.name);
+                        }
+                    }
+                }));
+            });
+
+
+            //上传html保存逻辑格式
+            $("#savelist").click(function () {
+                //console.log($('#content-wrapper').html());
+                upHtml($('#content-wrapper').html(), thisProjectName.name);
+                //$('.projectName').html("-----"+thisProjectName);
+
+            });
+
+
+
+
+
+
+            //保存视频架构并上传
+            let upHtml = function (HTML, project_name) {
+                let formData = new FormData();
+                formData.append("state", "110");
+                formData.append("project_name", project_name);
+                formData.append("upHTML", HTML);
+                $.ajax({
+                    url: './php/updatahtml.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: 'json',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        console.log(data);
+                        swal(`成功保存:` + data);
+                        listhtmlText();
+
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            }
+
+
+
+            //  上传视频文件到后台
+            let upFile = function (file, fileName, project_name) {
+                $()
+                let formData = new FormData();
+                formData.append("upfile", file);
+                formData.append("name", fileName);
+                formData.append("project_name", project_name);
+                console.log(project_name);
+                console.log(fileName);
+                formData.append("state", "200");
+                $.ajax({
+                    url: './php/updata.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    xhr: function () {
+                        var xhr = new XMLHttpRequest();
+                        $('.progessbg').append(`<div class="progress" style="margin:0 0 0 0 !important; height:6px;">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:45%;top:0px;background-color: #325bf9;" >
+                                                        <span class="sr-only">70% Complete</span>
+                                                    </div>
+                                                </div>`);
+                        //使用XMLHttpRequest.upload监听上传过程，注册progress事件，打印回调函数中的event事件
+                        xhr.upload.addEventListener('progress', function (e) {
+                            console.log(e);
+
+                            //loaded代表上传了多少
+                            //total代表总数为多少
+                            var progressRate = (e.loaded / e.total) * 100 + '%';
+
+                            //通过设置进度条的宽度达到效果
+                            $('.progress > div').css('width', progressRate);
+                        })
+
+                        return xhr;
+                    },
+                    success: function (data) {
+                        $('#dataList').hide();
+                        $('#videoFile').css('display', 'block');
+                        addvideoList(data);
+                        $('.progessbg').children().remove();
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+
+            };
+
+            //获取视频列表
+            function getvideolist(project_name) {
+                let formData = new FormData();
+                formData.append('state', '100');
+                formData.append('project_name', project_name);
+                $.ajax({
+                    url: './php/updata.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        console.log(data);
+                        if (data.length != 0) {
+                            $('#dataList').hide();
+                            $('#videoFile').css('display', 'block');
+                            for (var key in data) {
+                                addvideoList(data[key]);
+                            }
+
+                        } else {
+                            $('#dataList').show();
+                        }
+                        console.log("获取视频列表");
+
+                    },
+                    error: function (err) {
+                        console.log(err);
+                        console.log("获取视频列表失败");
+                    }
+                });
+
+
+
+            }
+
+
+            //清空现有html结构并导入html结构
+            function gethtmllist(src_html) {
+                let formData = new FormData();
+                formData.append('state', '130');
+                formData.append('src', `${src_html}`);
+                $.ajax({
+                    url: './php/loadhtml.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: "text",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        $('#content-wrapper').empty();
+                        $('#content-wrapper').append($(data));
+
+
+                    },
+                    error: function (err) {
+                        console.log(err);
+
+                    }
+                });
+
+
+            }
+
+
+
+
+            //导入键
+            $('#videolist').on('click', function () {
+                $('.videoList').empty();
+                listhtmlText();
+
+            })
+
+            //删除已上传视频按钮
+
+
+
+
+            function deletehtmltxt(filename) {
+                let formData = new FormData();
+                formData.append('file_name', filename)
+                $.ajax({
+                    url: './php/deletehtml.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+
+                    }
+                });
+
+            }
+
+
+
+
+            //获取已保存html并列表
+            function listhtmlText() {
+                let formData = new FormData();
+                formData.append('state', '140');
+                $.ajax({
+                    url: './php/loadhtml.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        $('.videoList').empty();
+                        for (i = 0; i < data.length; i++) {
+                            console.log(data[i].src);
+                            console.log(data[i].name);
+                            $('.videoList').append(`<li id="txt${i}"><div class='txt_name'><a  href="#" name="${data[i].name}" src='${data[i].src}'>${data[i].name}</a></div><a class="deletetxt" src='${data[i].name}' href="#" ><i class="cloes"></i></a></li>`);
+                        }
+
+
+                    },
+                    error: function (err) {
+                        console.log(err);
+
+                    }
+                });
+
+            }
+
+            
+
+
+
+
+
+            //导入html文件
+
+            $('.videoList').on('click', 'a', function () {
+                if ($(this).attr('class') != "deletetxt active") {
+                    $('#videoFile').empty();
+                    gethtmllist($(this).attr('src'));
+                    getvideolist($(this).attr('name'));
+                    thisProjectName.name = $(this).attr('name');
+                    $('.projectName').val(thisProjectName.name);
+                    $('.projectName').html("-----" + thisProjectName.name);                 
+                    
+                } else {
+                    deletehtmltxt($(this).attr('src'));
+                    listhtmlText();
+                }
+
+            })
+
+            //txt删除
+
+            $("ul.videoList").on("mouseenter", 'li', function () {
+                window.document.onmouseover = function (e) {
+                    txt = e.target.id;
+                    $(`#${txt}`).find($('.deletetxt')).toggleClass("active");
+                };
+            });
+
+            $("ul.videoList").on("mouseleave", 'li', function () {
+                $(`li`).find($('.deletetxt')).removeClass("active");
+
+            });
+
+
+
+
+
+
+            //  截取视频的第一帧
+            /*   let captureImage = function (video) {
+                 let scale = 0.8;
+                 let canvas = document.createElement("canvas");
+                 canvas.width = 400;
+                   canvas.height = 200;
+                   console.log("截图");
+                 canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                 $('#videoFile').html(`<img src="${canvas.toDataURL("image/png")}" alt="">
+                               <span>${video.name}</span>`);
+               };
+               */
+            //  上传视频成功后加入素材库
+            let addvideoList = function (video) {
+                console.log(video.src);
+                $('#videoFile').append(`<li><video  src="${decodeURI(video.src)}" draggable="true" name="${(video.name)}"></video><p>${(video.name.split('.')[0]).substring(14)}</p><a class="deletevideo" href="#"  style="display: block; text-align: center;"><i src="${decodeURI(video.src)}" class="videoDelete"></i></a>
+                                      </li>`);  //网络上视频截图
+                console.log("加入素材库");
+            }
+
+
+            //删除已上传视频
+
+
+            $("#videoFile").on('click', '.videoDelete', function () {
+
+                deleteVideo($(this).attr('src'));
+                $(this).parent().parent().remove();
+                //getvideolist(thisProjectName.name);
+
+
+            })
+
+            function deleteVideo(src) {
+                let formData = new FormData();
+                formData.append('src', src);
+                $.ajax({
+                    url: './php/deleteVideo.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        console.log(data);
+                        swal('提示', '成功', 'success');
+                    },
+                    error: function (err) {
+                        console.log(err);
+
+                    }
+                });
+
+            }
+        //发布视频
+            $('#release').on('click', function () {
+
+                txt=$('#content-wrapper').find('video.video_img');
+                fortrue = true;
+                for (i = 0; i < txt.length; i++) {
+                    if ($('#content-wrapper').find('video.video_img')[i].src+"#" != document.URL) {
+ 
+                    } else {
+                        alert('请拖入视频');
+                        fortrue = false;
+                    }
+                    
+                }
+                if (fortrue) {
+                    
+                    for (i = 0; i < txt.length; i++) {
+                        $('#content-wrapper').find('video.video_img')[i].src = "../release/user/" + $.cookie('user_name') + "/" + thisProjectName.name + "/video/" + $(txt[i]).attr('name');
+                        $($('#content-wrapper').find('video.video_img')[i]).parent().parent().parent().attr('src', "../release/user/" + $.cookie('user_name') + "/" + thisProjectName.name + "/video/" + $(txt[i]).attr('name'));
+                            console.log($('#content-wrapper').find('video.video_img')[i].src);                       
+                    }
+                    $($('#content-wrapper').find('#head-branch')[0]).attr('src', $('#video_main').attr('src'));
+                    html=$('#content-wrapper').html();
+                    let formData = new FormData();
+                    console.log(html);
+                    console.log($('#head-branch').attr('name'));
+                    formData.append('project_name', thisProjectName.name);
+                    formData.append('video_name', $('#head-branch').attr('name'));
+                    formData.append('html', html);
+                    $.ajax({
+                        url: './php/release.php',
+                        type: 'post',
+                        data: formData,
+                        dataType: "json",
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            console.log(data);
+                            swal('提示', '成功', 'success');
+                        },
+                        error: function (err) {
+                            console.log(err);
+
+                        }
+                    });
+
+                }
+
+
+
+
+
+                ///发送改变的src
+                 
+                console.log();
+                //let formData = new FormData();
+                //formData.append();
+                //$.ajax({
+                //    url: './php/deleteVideo.php',
+                //    type: 'post',
+                //    data: formData,
+                //    dataType: "json",
+                //    cache: false,
+                //    contentType: false,
+                //    processData: false,
+                //    success: function (data) {
+                //        console.log(data);
+                //        swal('提示', '成功', 'success');
+                //    },
+                //    error: function (err) {
+                //        console.log(err);
+
+                //    }
+
+                    
+                //});
+
+               // $(html).find('video');
+
+            });
+
+
+
+            function release() {
+                html = $('#content-wrapper').html();
+                console.log($(html).find('video'));
+
+                //let formData = new FormData();
+                //formData.append('src', src);
+                //$.ajax({
+                //    url: './php/releaes',
+                //    type: 'post',
+                //    data: formData,
+                //    dataType: "json",
+                //})
+            }
+
+           
+
+
+            //拖拽至指定元素
+            let dragVideo = function () {
+                var el = $('body');//声明一个变量，默认值为body
+                el = event.target;//鼠标每经过一个元素，就把该元素赋值给变量el
+                console.log('当前鼠标在', el, '元素上');//在控制台中打印该变量
+
+                if (el.className == "video_img") {
+                    //img_video = $(el).find("video")[0];
+                    $(el).attr("src", data.src);
+                    $(el).attr("name", $(data).attr('name'));                   
+                    $($(el).parent().parent().parent()[0]).attr("name", $(data).attr('name'));
+                    $($(el).parent().parent().parent()[0]).attr("src", $(data).attr('src'));
+                    $(el).parent().parent().find(".text").html($(data).attr('name').split('.')[0].substring(14));
+                    
+
+
+                }
+
+            };
+
+
+
+
+
+
+            // -----------------------------------------分支逻辑开始--------------------------------------------------------
+            //  添加分支
+            $('#content-wrapper').on('click', '.icon-jia', function (event) {
+                let _this = $(this);
+                let parentBranch = _this.parent().parent().parent();
+                // console.log(parentBranch.siblings().not('.branch-content').find('.icon-open'))
+
+                for (let i = 0; i < parentBranch.siblings().not('.branch-content').length; i++) {
+                    if (parentBranch.siblings().not('.branch-content').eq(i).find('.branch').length > 0) {
+                        foldBranch(parentBranch.siblings().not('.branch-content').eq(i).find('.icon-fold').eq(0))
+                    }
+                }
+
+                openBranch(_this.next().next().next())
+                parentBranch.find('.icon-edit').eq(0).removeClass('d-none');
+                parentBranch.find('.icon-fold').eq(0).removeClass('d-none');
+                parentBranch.find('.icon-open').eq(0).addClass('d-none');
+
+                if (parentBranch.children('.branch').length < 4) {
+                    branchLocation(parentBranch);
+                    exchangeBranch(parentBranch);
+                }
+
+                event.stopPropagation();
+            });
+
+            //  整理不同分支位置
+            let exchangeBranch = function (parentBranch) {
+                switch (parentBranch.children('.branch').length) {
+                    case 1: changeLocation(parentBranch.children('.branch').eq(0), "0px", '0', '50%'); break;
+                    case 2: changeLocation(parentBranch.children('.branch').eq(0), "80px", '-40', '90%');
+                        changeLocation(parentBranch.children('.branch').eq(1), "-80px", '40', '10%'); break;
+                    case 3: changeLocation(parentBranch.children('.branch').eq(0), "140px", '-33', '100%');
+                        changeLocation(parentBranch.children('.branch').eq(1), "0px", '0', '50%');
+                        changeLocation(parentBranch.children('.branch').eq(2), "-140px", '38', '1%');
+                        break;
+                    case 4: changeLocation(parentBranch.children('.branch').eq(0), "225px", '-50', '129%');
+                        changeLocation(parentBranch.children('.branch').eq(1), "74px", '-50', '87%');
+                        changeLocation(parentBranch.children('.branch').eq(2), "-72px", '50', '30%');
+                        changeLocation(parentBranch.children('.branch').eq(3), "-220px", '50', '-13%');
+                }
+            }
+            //  给分支收缩绑定点击事件
+            $('#content-wrapper ').on('click', '.icon-fold', function (event) {
+                let _this = $(this);
+                foldBranch($(_this));
+                event.stopPropagation();
+            })
+
+            //  给分支展开绑定点击事件
+            $('#content-wrapper').on('click', '.icon-open', function (event) {
+                let _this = $(this);
+                let parentBranch = _this.parent().parent().parent();
+                openBranch(_this);
+                for (let i = 0; i < parentBranch.siblings().not('.branch-content').length; i++) {
+                    if (parentBranch.siblings().not('.branch-content').eq(i).find('.branch').length > 0) {
+                        // console.log(parentBranch.siblings().not('.branch-content').eq(i).find('.icon-fold').eq(0))
+                        foldBranch(parentBranch.siblings().not('.branch-content').eq(i).find('.icon-fold').eq(0))
+                    }
+                }
+                event.stopPropagation();
+            });
+
+            //  分支收缩
+            let foldBranch = function (_this) {
+                let parentBranch = _this.parent().parent().parent();
+                parentBranch.find('.branch-content').eq(0).siblings().addClass('d-none');
+                _this.addClass('d-none')
+                _this.removeClass('d-block')
+                parentBranch.find('.icon-open').eq(0).addClass('d-block');
+            };
+
+            //  分支展开
+            let openBranch = function (_this) {
+                let parentBranch = _this.parent().parent().parent();
+                parentBranch.find('.branch-content').eq(0).siblings().removeClass('d-none');
+
+                _this.removeClass('d-block')
+
+                parentBranch.find('.icon-fold').eq(0).addClass('d-block');
+
+            };
+
+            // 根据位置添加分支并标上每个video_id
+
+
+            //添加分支，并给每个video标签取名
+            let branchLocation = function (parentBranch) {
+                var video_id = "";
+                console.log(parentBranch);
+                console.log(parentBranch.children('div').length);
+                console.log(parentBranch.parentsUntil($("#content-wrapper")).length + 1);
+                if (parentBranch.attr('id') == 'head-branch') {
+                    console.log("第一层");
+                    var video_id = 'video_';
+                    video_id = video_id + parentBranch.children('div').length.toString();
+                    parentBranch.append(`
+                                                                <div class="branch position-absolute"  src=""  style="bottom:0px;left:233px" data-question=""
+                                                        data-answer1='' data-answer2='' data-answer3='' data-answer4='' name=""  id="${video_id}">
+                                                                        <div class="branch-content">
+                                                                            <div class="img-wrapper">
+                                                                                <video  class="video_img" id="${video_id}"  src=""  name=""  style="width:100%; height:100%; object-fit: fill">
+                                                                                </video>
+                                                                                <img class="video_img"  src="" alt="">
+                                                                                <span class="icon icon-jia"><i class="iconfont icon-jia1"></i></span>
+                                                                                <img src="images/del.svg" alt="" class="img-fluid position-absolute icon-del"
+                                                              style="top: 5%;right: 5%;">
+                                                                                <img src="images/editor.svg" alt="" class="img-fliud icon-edit d-none" data-toggle="modal"
+                                                              data-target="#modal-edit">
+                                                            <img src="images/fold.svg" alt="" class="img-fluid position-absolute d-none icon-fold"
+                                                              style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                            <img src="images/open.svg" alt="" class="img-fluid position-absolute d-none icon-open"
+                                                              style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                                            </div>
+                                                                            <p class="text">拖入视频</p>
+                                                                            <div class="line position-absolute" style="transform:rotate(0deg)"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                `)
+                } else {
+                    video_id = parentBranch.attr('id').toString();
+                    video_id = video_id + "_" + parentBranch.children('div').length.toString();
+                    parentBranch.append(`
+                                                                <div class="branch position-absolute" src="" style="bottom:0px;left:233px" data-question=""
+                                                        data-answer1='' data-answer2='' data-answer3='' data-answer4='' name=""  id="${video_id}">
+                                                                        <div class="branch-content">
+                                                                            <div class="img-wrapper">
+                                                                                <video class="video_img" id="${video_id}"  src=""  name=""  style="width:100%; height:100%; object-fit: fill">
+                                                                                </video>
+                                                                                <img class="video_img"  src="" alt="">
+                                                                                <span class="icon icon-jia"><i class="iconfont icon-jia1"></i></span>
+                                                                                <img src="images/del.svg" alt="" class="img-fluid position-absolute icon-del"
+                                                              style="top: 5%;right: 5%;">
+                                                                                <img src="images/editor.svg" alt="" class="img-fliud icon-edit d-none" data-toggle="modal"
+                                                              data-target="#modal-edit">
+                                                            <img src="images/fold.svg" alt="" class="img-fluid position-absolute d-none icon-fold"
+                                                              style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                            <img src="images/open.svg" alt="" class="img-fluid position-absolute d-none icon-open"
+                                                              style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                                            </div>
+                                                                            <p class="text">拖入视频</p>
+                                                                            <div class="line position-absolute" style="transform:rotate(0deg)"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                `)
+                }
+
+                console.log(video_id);
+                parentBranch.parents('video');
+            }
+
+
+            //  超过一个位置调整之前分支的位置
+            let changeLocation = function (branch, bottom, rotate, lTop) {
+                // console.log(branch)
+                branch.css('bottom', bottom);
+                branch.find('.line').eq(0).css({ 'transform': `rotate(${rotate}deg)`, 'top': lTop })
+            }
+
+            //  拖拽功能封装
+            let ondragMove = function (dv) {
+                //获取元素
+                let x = 0;
+                let y = 0;
+                let l = 0;
+                let t = 0;
+                let isDown = false;
+                //鼠标按下事件
+                dv.onmousedown = function (e) {
+                    //获取x坐标和y坐标
+                    x = e.clientX;
+                    y = e.clientY;
+
+                    //获取左部和顶部的偏移量
+                    l = dv.offsetLeft;
+                    t = dv.offsetTop;
+                    //开关打开
+                    isDown = true;
+                    //设置样式
+                    dv.style.cursor = 'move';
+                }
+                //鼠标移动
+                window.onmousemove = function (e) {
+                    if (isDown == false) {
+                        return;
+                    }
+                    //获取x和y
+                    let nx = e.clientX;
+                    let ny = e.clientY;
+                    //计算移动后的左偏移量和顶部的偏移量
+                    let nl = nx - (x - l);
+                    let nt = ny - (y - t);
+
+                    dv.style.left = nl + 'px';
+                    dv.style.top = nt + 'px';
+                }
+                //鼠标抬起事件
+                dv.onmouseup = function () {
+                    //开关关闭
+                    isDown = false;
+                    dv.style.cursor = 'default';
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+            };
+            ondragMove(oContentWrapper);
+
+            //  点击编辑填写问题和答案
+            $('#content-wrapper').on('click', '.icon-edit', function (event) {
+                let _this = $(this);
+                let parentBranch = _this.parent().parent().parent();
+
+                console.log();///zheli
+                console.log(parentBranch.children());
+                $('tbody').remove();
+                console.log(parentBranch.children().length);
+                $('table').append(`<tbody></tbody>`);
+                for (i = 0; i < parentBranch.children().length - 1; i++) {
+                    console.log($('tbody'));
+                    $('tbody').append(`
+                                       <tr id = "tr-answer${i + 1}" ><td>${i + 1}</td>
+                                       <td><input type="text" name="" id="answer${i + 1}" placeholder="选填" class="pl-3"></td>
+                                       </tr>
+                                      `);
+                }
+
+
+
+                $('#question').val(parentBranch.attr('data-question'));
+                $('#answer1').val(parentBranch.attr("data-answer1"));
+                $('#answer2').val(parentBranch.attr("data-answer2"));
+                $('#answer3').val(parentBranch.attr("data-answer3"));
+                $('#answer4').val(parentBranch.attr("data-answer4"));
+
+
+
+                $('#question-save').unbind('click').on('click', function () {
+
+                    $('#modal-edit').modal('hide');
+                    console.log("save");
+                    $('#question-save').attr('data-dismiss', "modal");
+                    parentBranch.attr("data-question", $('#question').val());
+                    parentBranch.attr("data-answer1", `${$('#answer1').val()}`);
+                    console.log(parentBranch.attr("data-answer1"));
+                    parentBranch.attr("data-answer2", `${$('#answer2').val()}`);
+                    console.log(parentBranch.attr("data-answer2"));
+                    parentBranch.attr("data-answer3", `${$('#answer3').val()}`);
+                    console.log(parentBranch.attr("data-answer3"));
+                    parentBranch.attr("data-answer4", `${$('#answer4').val()}`);
+                    console.log(parentBranch.attr("data-answer4"));
+
+
+                    // console.log(`{"answerA":${$('#answerA').val()},"answerB":${$('#answerB').val()},"answerC":${$('#answerC').val()},"answerD":${$('#answerD').val()}}`,parentBranch)
+                })
+
+                // event.stopPropagation();
+            });
+
+            //  删除分支
+            $('#content-wrapper').on('click', '.icon-del', function (event) {
+                let _this = $(this);
+                let parentBranch = _this.parent().parent().parent();
+                let grandparentBranch = _this.parent().parent().parent().parent();
+
+                parentBranch.remove();
+                exchangeBranch(grandparentBranch);
+                event.stopPropagation();
+            });
+
+            // -----------------------------------------分支逻辑结束--------------------------------------------------------
+
+
+            // -----------------------------------------视频逻辑开始--------------------------------------------------------
+            /* 拖动时触发*/
+            var data;
+
+            document.addEventListener("dragstart", function (event) {
+                console.log(event);
+                //dataTransfer.setData()方法设置数据类型和拖动的数据
+                event.dataTransfer.setData("video", event.target.id);
+                data = event.target;
+            });
+
+            /* 拖动完成后触发 */
+            document.addEventListener("dragenter", function (event) {
+
+
+                // console.log(event)
+                // if (event.target.className == "droptarget") {
+                //   event.target.style.border = "3px dotted red";
+                // }
+
+
+
+            });
+            // 默认情况下,数据/元素不能在其他元素中被拖放。对于drop我们必须防止元素的默认处理
+            document.addEventListener("dragover", function (event) {
+                event.preventDefault();
+            });
+            // 当可拖放的p元素离开droptarget，重置div的边框样式
+            document.addEventListener("dragleave", function (event) {
+                // console.log(event);
+            });
+            /*对于drop,防止浏览器的默认处理数据(在drop中链接是默认打开)
+            复位输出文本的颜色和DIV的边框颜色
+            利用dataTransfer.getData()方法获得拖放数据
+            拖拖的数据元素id(“drag1”)
+            拖拽元素附加到drop元素*/
+            document.addEventListener("drop", function (event) {
+                console.log(event);
+                event.preventDefault();
+                dragVideo();
+            });
+
+
+
+
+
+
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

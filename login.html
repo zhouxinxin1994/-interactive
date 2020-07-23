@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>互动登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="images/Favicon.png">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="css/fontello-codes.css">
+	<link rel="stylesheet" type="text/css" href="css/thumbs-embedded.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/color.css">
+	<link href="css/img_smooth_check.css" type="text/css" rel="stylesheet" >
+
+</head>
+<body>
+
+	<div class="wrapper">
+		<header>
+			<div class="top_bar">
+				<div class="container">
+					<div class="top_header_content">
+						<div class="menu_logo">
+							<a href="index.html" title="" class="logo">
+								<img src="images/logo2(small).png" height="70" width="160" alt="">
+							</a>
+						</div><!--menu_logo end-->
+						
+						
+						<div class="clearfix"></div>
+					</div><!--top_header_content end-->
+				</div>
+			</div><!--header_content end-->
+		</header>
+	
+		<section class="form_popup">
+			<div class="login_form" id="login_form">
+				<div class="hd-lg">
+					<img src="images/logo2(small).png" alt="">
+					<span>登录你的互动视频账户</span>
+				</div><!--hd-lg end-->
+				<div class="user-account-pr">
+					<form>
+						<div class="input-sec">
+							<input type="text" name="username" id="username" placeholder="用户名">
+						</div>
+						<div class="input-sec">
+							<input type="Password" name="password" id="password" placeholder="密码">
+						</div>
+
+						<div class="chekbox-lg">
+							<label>
+								<input type="checkbox" name="remember" value="rem">
+								<b class="checkmark"> </b>
+								<span>记住账号</span>
+							</label>
+						</div>
+						<div id="logErrorMessage" style="position:relative;text-align:center;bottom:15px;"></div>
+						<div class="input-sec mb-0">
+							<button id="logIn" style="background-color: #2182c6;">登录</button>
+						</div><!--input-sec end-->
+					</form>
+					<a href="#" title="" class="fg_btn">忘记密码？</a>
+				</div><!--user-account end--->
+				<div class="fr-ps">
+					<h1>还没有帐号？<a href="signup.html" title="" class="show_signup">在此注册.</a></h1>
+				</div><!--fr-ps end-->
+			</div><!--login end--->
+
+		</section><!--form_popup end-->
+
+	</div><!--wrapper end-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/img_smooth_check.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script>
+		window.onload = function () {
+
+            $.ajax({
+                url: 'php/cookie.php',
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data.msg);
+                    if (data.code) {
+                        window.islogin = true;
+                        $('#logicon').addClass('d-none')
+                        $('#usericon').removeClass('d-none')
+                        $('#logout').removeClass('d-none')
+                        $('#usericon').html(`你好，${data.user_name}`)
+
+                    } else {
+                        $('#usericon').html('未登录');
+                        window.islogin = false;
+                    }
+
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+			var errorMessage = '';
+			// 登录请求
+
+			$('#logIn').click(function () {
+				$("#logErrorMessage").empty();
+                event.preventDefault();
+				let username = $('#username').val();
+				let password = $('#password').val();
+				$('#logErrorMessage').addClass('d-none')
+
+				if (checkName(username) && checkPassword(password)) {
+					var data = {
+						"user_name": username,
+						"user_password": password,
+						"act": 'login'
+
+					};
+					
+                    $('.wrapper').append(`<div class="widgets__img_check_box" id="select" style="position:absolute; width:50%;margin:0 auto;top:400px;right: 20%;">
+			<div class="widgets__img_display">
+				<div class="widgets__img_cnt">
+					<img src1="a.jpg" class="widgets__img_src" />
+					<canvas class="widgets__img_fragment_hollow"></canvas>
+					<div class="widgets__img_fragment_cnt">
+						<canvas class="widgets__img_fragment widgets__img_fragment_shadow"></canvas>
+						<canvas class="widgets__img_fragment widgets__img_fragment_content"></canvas>
+					</div>
+					<div class="widgets__icon_refresh"></div>
+				</div>
+			</div>
+			<div class="widgets__smooth_cnt">
+				<div class="widgets__smooth_bar"></div>
+				<div class="widgets__smooth_circle"></div>
+			</div>
+		</div>`);
+					var s = WIDGETS.imgSmoothCheck({
+						selector: "#select",
+						data: ["images/t1.png", "images/t2.png", "images/t3.png"],
+						imgHeight: 100,
+						imgWidth: 200,
+						allowableErrorValue: 3,
+						success: function () {
+							$.ajax({
+								url: 'php/login.php',
+								type: "POST",
+								dataType: "json",
+								data: data,
+								success: function (data) {
+									if (data.code) {
+										console.log(data);
+										//  清空表单数据
+										if (data.user_type == 1) {
+											$('#username').val('')
+											$('#password').val('')
+
+
+											swal("登陆成功", {
+												icon: "success",
+												buttons: false,
+												timer: 2000
+											}).then((value) => {
+												//  登录成功后显示用户头像
+                                               
+
+												$('#logicon').addClass('d-none');
+												$('#usericon').removeClass('d-none');
+												$('#logout').removeClass('d-none');
+												$('#usericon').html(`你好，${data.user_name}`);
+											})
+										} else {
+											swal("登录成功", {
+												icon: "success",
+												buttons: false,
+												timer: 2000
+											}).then(() => {
+												//$.cookie('the_cookie', 'the_value', { expires: 3 ,path:'/php'});
+											
+												window.location.href = 'index.html';
+											})
+										}
+
+									}else{
+                                        swal(`${data.msg}`, '', 'error').then(() => {
+                                            $('#logErrorMessage').html(data.msg)
+											$('#password').val('');
+											$('.widgets__img_check_box').remove();
+											$('#logErrorMessage').removeClass('d-none');
+										});
+									}
+								},
+								error: function (error) {
+									console.log(error)
+								}
+							})
+						},
+						error: function (res) {
+							swal('重新再试', '', 'error').then(() => {
+                                $('#password').val('');
+								$('.widgets__img_check_box').remove();
+
+                            })
+
+
+							
+
+
+						}
+					});
+					$(".refresh").on("click", function () {
+						s.refresh();
+					});
+
+					console.log("adad");
+					//验证
+
+				} else {
+					$('#logErrorMessage').removeClass('d-none')
+					$('#logErrorMessage').html(errorMessage)
+
+				}
+			})
+
+			function checkPassword(password) { // check if empty of password
+				if (password.length === 0) {
+
+					errorMessage = '密码不能为空'; return false;
+				} else {
+					if (password.length < 6 || password.length > 18) {
+
+						errorMessage = '密码应该在6-18位之间'; return false;
+					} else {
+
+						return true
+					}
+				}
+			}
+
+			function checkName(username) { // check if empty of email and pattern the emaill
+				if (username.length === 0) {
+					errorMessage = '用户名不能为空';
+					return false;
+				} else {
+					return true;
+				}
+			}
+		}
+
+				//滑块验证
+
+
+			//    var s = WIDGETS.imgSmoothCheck({
+			//        selector: "#select",
+			//        data: ["images/t1.png", "images/t2.png", "images/t3.png"],
+			//        imgHeight: 100,
+			//        imgWidth: 200,
+			//        allowableErrorValue: 3,
+			//        success: function () {
+						//alert("成功");
+
+			//        },
+			//        error: function (res) {
+			//            alert('重新再试');
+			//        }
+			//    });
+			//    $(".refresh").on("click", function () {
+			//        s.refresh();
+			//    });
+
+							//$("#login").click(function () {
+							//	console.log("发送");
+				   //             var sendData = { "username": $("#username").val(), "password": $("#password").val() }
+
+				   //             $.ajax({
+
+				   //                 url: "./php/login.php",
+
+				   //                 type: "POST",
+
+				   //                 data: sendData,
+
+				   //                 success: function (data) {
+
+				   //                     if (data == 1) {
+
+				   //                         $("#p").html("密码正确")
+
+
+
+				   //                     } else if (data == 2) {
+
+				   //                         $("#p").html("密码不正确")
+
+				   //                     } else if (data == 3) {
+
+				   //                         $("#p").html("账号不存在")
+
+				   //                     }
+
+							//		},error(data) {
+
+				   //                 }
+
+
+
+				   //             })
+
+				   //         })
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>

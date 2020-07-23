@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oren Video Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="images/Favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/intlTelInput.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello-codes.css">
+    <link rel="stylesheet" type="text/css" href="css/thumbs-embedded.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/color.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <section class="form_popup">
+
+            <div class="signup_form" id="signup_form">
+                <div class="hd-lg">
+                    <img src="images/logo2(small).png" alt="">
+                    <span>注册您的互动视频帐户</span>
+                </div><!--hd-lg end-->
+                <div class="user-account-pr">
+                    <form>
+                        <div class="input-sec mgb25">
+                            <input type="text" name="username" id="username" placeholder="用户名">
+                            <label>
+
+                            </label>
+                        </div>
+
+                        <div class="input-sec">
+                            <input type="Password" name="password" id="password" placeholder="密码">
+                            <label>
+
+                            </label>
+                        </div>
+                        <div class="input-sec">
+                            <input type="password" name="confirm-password" placeholder="确认密码">
+                            <label>
+
+                            </label>
+                        </div>
+                        <div class="input-sec">
+                            <input type="email" name="email" id="email" placeholder="电子邮箱">
+                            <label>
+
+                            </label>
+                        </div>
+                        <div class="input-sec">
+                            <input id="phone" type="tel" autocomplete="off" style="color: #383838;height: 38px;padding-left: 35px;background-color: #e2ebef;border-radius: 5px;border: none;padding: 0 50px;width: 120%;">
+                            <label>
+
+                            </label>
+                        </div>
+                        <div class="input-sec flatpickr">
+                            <input type="number" name="date" class="flatpickr-input" placeholder="验证码" data-input>
+                        </div>
+                        <div id="signErrorMessage">
+
+                        </div>
+
+                        <div class="chekbox-lg">
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="gender" value="Male">
+                                        <b class="checkmark"> </b>
+                                        <span>男</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="gender" value="Female">
+                                        <b class="checkmark"> </b>
+                                        <span>女</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="input-sec mb-0">
+                            <button id="signUp" style="background-color: #2182c6;">注册</button>
+                        </div><!--input-sec end-->
+                    </form>
+                    <div class="form-text">
+                        <p>请你阅读，你同意<a href="#" title="">服务条款</a> 和 <a href="#" title="">隐私政策</a> </p>
+                    </div>
+                </div><!--user-account end--->
+                <div class="fr-ps">
+                    <h1>已经有帐号了？<a href="login.html" title="" class="show_signup"> 在此登录</a></h1>
+                </div><!--fr-ps end-->
+            </div><!--login end--->
+
+        </section><!--form_popup end-->
+
+
+    </div><!--wrapper end-->
+
+
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/intlTelInput.js"></script>
+    <script src="js/flatpickr.js"></script>
+    <script type="text/javascript" src="js/sweetalert.min.js"></script>
+    <script>
+        $("#phone").intlTelInput({
+            //allowExtensions: true,
+            //autoFormat: false,
+            //autoHideDialCode: false,
+            //autoPlaceholder: false,
+            //defaultCountry: "auto",
+            // geoIpLookup: function(callback) {
+            //   $.get('http://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+            //     var countryCode = (resp && resp.country) ? resp.country : "";
+            //     callback(countryCode);
+            //   });
+            // },
+            //nationalMode: false,
+            numberType: "MOBILE",
+            //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+            preferredCountries: ['cn'],
+        });
+
+        //  注册请求
+        $('#signUp').click(function () {
+            event.preventDefault();
+            var username = $('#username').val();
+            var email = $('#email').val();
+            var password = $('#password').val();
+            //$("#signErrorMessage").addClass('d-none')
+           
+            if (checkEmail(email) && checkPasswrod(password) && checkName(username)) {
+                var data = {
+                    "user_name": username,
+                    "user_email": email,
+                    "user_password": password,
+                    "user_phone": $("#phone").val(),
+                }
+                //验证
+                console.log(username, email, password);
+                $.ajax({
+                    url: 'php/register.php',
+                    type: "post",
+                    dataType: "JSON",
+                    data: data,
+                //    cache: false,
+                 //   contentType: false,
+                 //   processData: false,
+                    success: function (data) {
+                        console.log(data);
+                        //  判断账号是否已经被注册
+                        if (data.state.code) {
+                            //  清空表单数据
+                            $('#username').val('')
+                            $('#email').val('')
+                            $('#password').val('')
+                            $("#phone").val('')
+                            // $('#modal-popup').modal('hide')
+                            swal({
+                                icon: "success",
+                                title: "注册成功",
+                                text: "马上登陆"
+                            }).then(() => {
+                                //  注册成功后跳转到登录tab
+                                //$('#modal-popup').modal('show')
+                                //$('#modal-popup li:first-child a').tab('show')
+                            })
+                        } else {
+                            $('#signErrorMessage').removeClass('d-none')
+                            $('#signErrorMessage').html(data.state.msg)
+                        }
+                    },
+                    error: function (err) {
+                        window.console.log(err)
+                    }
+                })
+            } else {
+                $('#signErrorMessage').removeClass('d-none')
+                $('#signErrorMessage').html(errorMessage)
+            }
+        })
+
+
+
+
+        function checkPasswrod(password) { // check if empty of password
+            if (password.length === 0) {
+                errorMessage = '密码不能为空'; return false
+            } else {
+                if (password.length < 6 || password.length > 18) {
+                    errorMessage = '密码应该在6-18位之间'; return false
+                } else {
+                    
+                    return true
+                }
+            }
+        }
+
+        function checkEmail(email) { // check if empty of email and pattern the emaill
+            if (email.length === 0) {
+                errorMessage = '邮箱地址不能为空'; return false
+            } else {
+                const pattern = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,3}$/ // 匹配邮件正则
+                if (!pattern.test(email)) {
+                    errorMessage = '邮箱地址无效'; return false
+                } else {
+                    return true
+                  
+                }
+            }
+        }
+
+        function checkName(name) { // check if empty of email and pattern the emaill
+            if (name.length < 4) {
+                console.log(name.length);
+                errorMessage = '名字太短，字母AZ或az，数字0-9和下划线_';
+                return false
+            } else {
+                return true
+                
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

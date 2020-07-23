@@ -1,0 +1,35 @@
+<div class="branch position-relative" src="upload/user/video/test/demo3//20200629110628序列01.mp4" id="head-branch" data-question="" data-answer1="" data-answer2="" data-answer3="" data-answer4="" name="20200629110628序列01.mp4">   <div class="branch-content">    <div class="img-wrapper">                                <video class="video_img" src="http://localhost/upload/user/video/test/demo3//20200629110628%E5%BA%8F%E5%88%9701.mp4" name="20200629110628序列01.mp4" style="width:100%; height:100%; object-fit: fill">    </video>   <img class="video_img" src="" alt="">     <span class="head-text" style="      background-color: #4c68ef;">片头</span><span class="icon icon-jia"><i class="iconfont icon-jia1"></i></span>   <img src="images/editor.svg" alt="" class="img-fliud icon-edit" data-toggle="modal" data-target="#modal-edit">  <img src="images/fold.svg" alt="" class="img-fluid position-absolute icon-fold d-block" style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">    <img src="images/open.svg" alt="" class="img-fluid position-absolute d-none icon-open" style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">   </div>  <p class="text">序列01</p>   </div> 
+                                                                <div class="branch position-absolute" src="upload/user/video/test/demo3//20200629110629温妮.mp4" style="bottom: 80px; left: 233px;" data-question="" data-answer1="" data-answer2="" data-answer3="" data-answer4="" name="20200629110629温妮.mp4" id="video_1">
+                                                                        <div class="branch-content">
+                                                                            <div class="img-wrapper">
+                                                                                <video class="video_img" id="video_1" src="http://localhost/upload/user/video/test/demo3//20200629110629%E6%B8%A9%E5%A6%AE.mp4" name="20200629110629温妮.mp4" style="width:100%; height:100%; object-fit: fill">
+                                                                                </video>
+                                                                                <img class="video_img" src="" alt="">
+                                                                                <span class="icon icon-jia"><i class="iconfont icon-jia1"></i></span>
+                                                                                <img src="images/del.svg" alt="" class="img-fluid position-absolute icon-del" style="top: 5%;right: 5%;">
+                                                                                <img src="images/editor.svg" alt="" class="img-fliud icon-edit d-none" data-toggle="modal" data-target="#modal-edit">
+                                                            <img src="images/fold.svg" alt="" class="img-fluid position-absolute d-none icon-fold" style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                            <img src="images/open.svg" alt="" class="img-fluid position-absolute d-none icon-open" style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                                            </div>
+                                                                            <p class="text">温妮</p>
+                                                                            <div class="line position-absolute" style="transform: rotate(-40deg); top: 90%;"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                <div class="branch position-absolute" src="" style="bottom: -80px; left: 233px;" data-question="" data-answer1="" data-answer2="" data-answer3="" data-answer4="" name="" id="video_2">
+                                                                        <div class="branch-content">
+                                                                            <div class="img-wrapper">
+                                                                                <video class="video_img" id="video_2" src="" name="" style="width:100%; height:100%; object-fit: fill">
+                                                                                </video>
+                                                                                <img class="video_img" src="" alt="">
+                                                                                <span class="icon icon-jia"><i class="iconfont icon-jia1"></i></span>
+                                                                                <img src="images/del.svg" alt="" class="img-fluid position-absolute icon-del" style="top: 5%;right: 5%;">
+                                                                                <img src="images/editor.svg" alt="" class="img-fliud icon-edit d-none" data-toggle="modal" data-target="#modal-edit">
+                                                            <img src="images/fold.svg" alt="" class="img-fluid position-absolute d-none icon-fold" style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                            <img src="images/open.svg" alt="" class="img-fluid position-absolute d-none icon-open" style="top: 56%;right: 0;transform: rotate(45deg);z-index: 99;">
+                                                                            </div>
+                                                                            <p class="text">拖入视频</p>
+                                                                            <div class="line position-absolute" style="transform: rotate(40deg); top: 10%;"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>

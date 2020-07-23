@@ -1,0 +1,1774 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="video-play.css">
+    <link rel="stylesheet" type="text/css" href="css/player.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello-codes.css">
+    <link rel="stylesheet" type="text/css" href="css/thumbs-embedded.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/color.css">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="css/input.css">
+    <link rel="stylesheet" type="text/css" href="css/plyr.css">
+    <link rel="stylesheet" type="text/css" href="css/svg/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/svg/component.css" />
+    <style>
+        html {
+            background-color: #1c1c1f;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #fff;
+            opacity: 0.9;
+            margin-left: 0px;
+            margin-top: 62px;
+            margin-bottom: -25px;
+        }
+
+        button {
+            outline: none;
+            border: 0px solid;
+            background: transparent;
+        }
+
+        .ytp-play-button {
+            fill: #fff;
+            opacity: 0.85;
+        }
+
+            .ytp-play-button:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+    </style>
+
+</head>
+<body>
+    <script src="js/svg/snap.svg-min.js"></script>
+
+    <script src="js/svg/modernizr.custom.js"></script>
+    <header>
+        <div class="top_bar">
+            <div class="container">
+                <div class="top_header_content">
+                    <div class="menu_logo">
+                        <a href="#" title="" class="menu">
+                            <i class="icon-menu"></i>
+                        </a>
+                        <a href="index.html" title="" class="logo">
+                            <img src="images/logo2(small).png" height="70" width="160" alt="">
+                        </a>
+                    </div><!--menu_logo end-->
+                    <div class="search_form">
+                        <form>
+                            <input type="text" name="search" placeholder="搜索课程">
+                            <button type="submit">
+                                <i class="icon-search"></i>
+                            </button>
+                        </form>
+                    </div><!--search_form end-->
+                    <ul class="controls-lv">
+                        <p id="usericon"></p>
+                        <li>
+                            <a href="#" title=""><i class="icon-message"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" title=""><i class="icon-notification"></i></a>
+                        </li>
+                        <li class="user-log">
+                            <div class="user-ac-img" id="">
+                                <img src="images/resources/user2.png" alt="">
+                            </div>
+                            <div class="account-menu">
+                                <h4>测试用户 <span class="usr-status">专业版</span></h4>
+                                <div class="sd_menu">
+                                    <ul class="mm_menu">
+                                        <li>
+                                            <span>
+                                                <i class="icon-user"></i>
+                                            </span>
+                                            <a href="#" title="">我的频道</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-paid_sub"></i>
+                                            </span>
+                                            <a href="#" title="">测试功能</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-settings"></i>
+                                            </span>
+                                            <a href="#" title="">设置</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-logout"></i>
+                                            </span>
+                                            <a id="logout" title="">退出</a>
+                                        </li>
+                                    </ul>
+                                </div><!--sd_menu end-->
+                                <div class="sd_menu scnd">
+                                    <ul class="mm_menu">
+                                        <li>
+                                            <span>
+                                                <i class="icon-light"></i>
+                                            </span>
+                                            <a href="#" title="">夜晚模式</a>
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <b class="slider round"></b>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-language"></i>
+                                            </span>
+                                            <a href="#" title="">语言</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-feedback"></i>
+                                            </span>
+                                            <a href="#" title="">发送反馈</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="icon-location"></i>
+                                            </span>
+                                            <a href="#" title="">位置</a>
+                                            <i class="icon-arrow_below"></i>
+                                        </li>
+                                    </ul>
+                                </div><!--sd_menu end-->
+                                <div class="restricted-mode">
+                                    <h4>限制模式</h4>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <div class="clearfix"></div>
+                                </div><!--restricted-more end-->
+                            </div>
+                        </li>
+
+                    </ul><!--controls-lv end-->
+                    <div class="clearfix"></div>
+                </div><!--top_header_content end-->
+            </div>
+        </div><!--header_content end-->
+    </header>
+    <div class="side_menu">
+        <div class="form_dvv">
+            <a href="#" title="" class="login_form_show">Sign in</a>
+        </div>
+        <div class="sd_menu">
+            <ul class="mm_menu">
+                <li>
+                    <span>
+                        <i class="icon-home"></i>
+                    </span>
+                    <a href="#" title="">Home</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-fire"></i>
+                    </span>
+                    <a href="#" title="">Trending</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-subscriptions"></i>
+                    </span>
+                    <a href="#" title="">Subscriptions</a>
+                </li>
+            </ul>
+        </div><!--sd_menu end-->
+        <div class="sd_menu">
+            <h3>Library</h3>
+            <ul class="mm_menu">
+                <li>
+                    <span>
+                        <i class="icon-history"></i>
+                    </span>
+                    <a href="#" title="">History</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-watch_later"></i>
+                    </span>
+                    <a href="#" title="">Watch Later</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-purchased"></i>
+                    </span>
+                    <a href="#" title="">Purchases</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-like"></i>
+                    </span>
+                    <a href="#" title="">Liked Videos</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-play_list"></i>
+                    </span>
+                    <a href="#" title="">Playlist</a>
+                </li>
+            </ul>
+        </div><!--sd_menu end-->
+        <div class="sd_menu subs_lst">
+            <h3>Subscriptions</h3>
+            <ul class="mm_menu">
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th1.png" alt="">
+                    </span>
+                    <a href="#" title="">Dr Disrespect</a>
+                    <small>3</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th2.png" alt="">
+                    </span>
+                    <a href="#" title="">ASMR</a>
+                    <small>6</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th3.png" alt="">
+                    </span>
+                    <a href="#" title="">Rivvrs</a>
+                    <small>2</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th4.png" alt="">
+                    </span>
+                    <a href="#" title="">The Verge</a>
+                    <small>11</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/th5.png" alt="">
+                    </span>
+                    <a href="#" title="">Seeker</a>
+                    <small>3</small>
+                </li>
+                <li>
+                    <span class="usr_name">
+                        <img src="images/resources/sn.png" alt="">
+                    </span>
+                    <a href="#" title="">Music</a>
+                    <small>20</small>
+                </li>
+            </ul>
+            <a href="#" title="" class="more-ch"><i class="icon-arrow_below"></i> Show 14 more</a>
+        </div><!--sd_menu end-->
+        <div class="sd_menu">
+            <ul class="mm_menu">
+                <li>
+                    <span>
+                        <i class="icon-settings"></i>
+                    </span>
+                    <a href="#" title="">Settings</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-flag"></i>
+                    </span>
+                    <a href="#" title="">Report history</a>
+                </li>
+                <li>
+                    <span>
+                        <i class="icon-logout"></i>
+                    </span>
+                    <a href="#" title="">Sign out</a>
+                </li>
+            </ul>
+        </div><!--sd_menu end-->
+        <div class="sd_menu m_linkz">
+            <ul class="mm_menu">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Community Rules </a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Contracts </a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <span>azyrusthemes</span>
+        </div><!--sd_menu end-->
+        <div class="sd_menu bb-0">
+            <ul class="social_links">
+                <li>
+                    <a href="#" title="">
+                        <i class="icon-facebook-official"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <i class="icon-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <i class="icon-instagram"></i>
+                    </a>
+                </li>
+            </ul><!--social_links end-->
+        </div><!--sd_menu end-->
+        <div class="dd_menu"></div>
+    </div><!--side_menu end-->
+    <section class="mn-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="mn-vid-sc single_video">
+                        <div class="vid-1">
+                            <div class="vid-pr">
+                                <div id="player" class="player">
+                                    <div id="videoBox" class="video-box text-center">
+                                        <div style="position:relative;width:100%;height:100%;object-fit: fill; z-index:3; background-color:black;">
+                                            <video class="srceenVideo" id="film" ondblclick="fullScreen()" video-id="" x-webkit-airplay="allow" playsinline="true" x5-playsinline="true" x5-video-player-type="h5" webkit-playsinline="true" x5-video-orientation="portraint" x5-video-player-fullscreen="true" preload="auto" poster="" src="">
+                                                <!--       <source id="type_mp4" src="" type="video/mp4"/>
+                                                <source id="type_ogg" src="" type="audio/ogg">
+                                                <source id="type_mp3" src="" type="audio/mpeg">  -->
+                                            </video>
+                                        </div>
+                                        <!--屏幕中显示的这暂停/播放图标-->
+                                        <img id="playImg" class="none" src="img/position.png" alt="">
+                                        <img id="pauseImg" class="none" src="img/position.png" alt="">
+                                        <div class="Srceen">
+                                            <div id="controller" style="z-index:300">
+                                                <div class="custom-progress">
+                                                    <span class="progress-bar">
+                                                        <label for="volume1915" class="plyr__sr-only"></label>
+                                                        <input id="volume1915" class="plyr__volume--input" type="range" min="0" max="100" value="0" data-plyr="volume" style="position:relative;color:aqua;width:100%;z-index:4">
+                                                        <progress class="plyr__progress--played" max="100" value="0" role="presentation"></progress>
+                                                        <progress class="plyr__progress--buffer" max="100" value="0"><span>0</span>% buffered</progress>
+                                                    </span>
+                                                </div>
+                                                <div class="progress-bar" style="display:none;">
+                                                    <div class="now"></div>
+                                                </div>
+
+                                                <div class="controller-btns">
+                                                    <div class="controller-left">
+                                                        <!--播放/暂停-->
+                                                        <button class="ytp-play-button ytp-button" aria-live="assertive" tabindex="32" aria-label="Pause" style="height:40px;width:40px" ;>
+                                                            <svg width="100%" height="100%" viewBox="0 0 36 36" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                                                <defs>
+                                                                    <path id="ytp-12" d="M 11 10 L 18 13.74 18 22.28 11 26 M 18 13.74 L 26 18 26 18 18 22.28">
+                                                                        <animate id="animation" begin="indefinite" attributeType="XML" attributeName="d" fill="freeze" from="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28" to="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" dur="0.1s" keySplines=".4 0 1 1"
+                                                                                 repeatCount="1"></animate>
+                                                                    </path>
+                                                                </defs>
+                                                                <use xlink:href="#ytp-12" class="ytp-svg-shadow"></use>
+                                                                <use xlink:href="#ytp-12" class="ytp-svg-fill"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <!--停止-->
+                                                        <!--音量-->
+                                                        <span class="sound-group2">
+                                                            <label class="volume">
+                                                                <input type="checkbox" onclick="soundMuted()">
+                                                                <svg viewBox="0 0 108 96">
+                                                                    <path d="M7,28 L35,28 L35,28 L59,8 L59,88 L35,68 L7,68 C4.790861,68 3,66.209139 3,64 L3,32 C3,29.790861 4.790861,28 7,28 Z"></path>
+                                                                    <path d="M79,62 C83,57.3333333 85,52.6666667 85,48 C85,43.3333333 83,38.6666667 79,34 L49,3"></path>
+                                                                    <path d="M95,69 C101.666667,61.6666667 105,54.3333333 105,47 C105,39.6666667 101.666667,32.3333333 95,25 L75.5,6 L49,33"></path>
+                                                                </svg>
+                                                            </label>
+                                                            <div class="sound-progress" style="display:block;">
+                                                                <div class="sound-now"></div>
+                                                                <div class="show-sound-now none"></div>
+                                                            </div>
+                                                        </span>
+                                                     
+                                                        <!--当前/总时间-->
+                                                        <div class="videotime">
+                                                            <span class="start"></span>/<span class="end"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="controller-right">
+                                                        <div class="rate-group">
+                                                            <span class="rate">倍数</span>
+                                                            <ul class="rate-dashboard none">
+                                                                <li style="width:50px;" onclick="getRate(this)">2.0x</li>
+                                                                <li style="width:50px;" onclick="getRate(this)">1.5x</li>
+                                                                <li style="width:50px;" onclick="getRate(this)">1.25x</li>
+                                                                <li style="color:#007ffe;width:50px;" onclick="getRate(this)">1x</li>
+                                                                <li style="width:50px;" onclick="getRate(this)">0.5x</li>
+                                                            </ul>
+                                                        </div>
+                                                        <section class="si-icons si-icons-hover"style="left: 0px;">
+                                                            <span class="si-icon si-icon-maximize" data-icon-name="maximize" onclick="fullScreen();">
+                                                            </span>                                                            
+                                                        </section>
+                                                        <section class="si-icons si-icons-hoversmall">
+                                                            <span class="si-icon si-icon-maximize-rotate" data-icon-name="maximize" onclick="ExitFullscreen()" style="margin:0px 0px;" >
+                                                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="30pt" height="30pt" viewBox="0 0 30 30" preserveAspectRatio="xMidYMid meet">  
+                                                                <g transform="translate(0,30) scale(0.01,-0.01)" fill="#ffffff" stroke="none"> 
+                                                                    <path d="M234 2296 c-19 -19 -34 -42 -34 -52 0 -11 100 -119 238 -258 170 -171 230 -237 212 -233 -14 2 -60 15 -103 28 -70 21 -79 22 -93 7 -22 -21 -12 -37 78 -125 l73 -72 203 -61 c210 -64 231 -66 232 -21 1 9 -25 104 -57 211 l-58 194 -79 83 c-43 46 -84 83 -91 83 -7 0 -18 -7 -25 -15 -12 -15 -2 -60 48 -215 3 -8 -107 96 -245 233 -137 136 -253 247 -257 247 -4 0 -23 -15 -42 -34z m612 -558 c-4 7 -29 83 -56 169 l-48 156 78 -79 78 -79 60 -200 c34 -109 60 -200 59 -202 -1 -1 -92 25 -202 59 l-200 60 -79 78 -79 78 156 -48 c86 -27 162 -52 169 -56 7 -3 -116 123 -275 282 l-287 289 27 28 28 27 289 -287 c159 -159 285 -282 282 -275z"></path> <path d="M1999 2084 c-137 -137 -249 -246 -249 -243 0 3 4 19 9 35 49 152 53 176 38 191 -21 21 -40 9 -123 -79 l-69 -73 -58 -195 c-32 -107 -58 -202 -57 -211 1 -45 22 -43 232 21 l203 61 73 72 c90 88 100 104 78 125 -14 15 -23 14 -93 -7 -43 -13 -89 -26 -103 -28 -18 -4 42 62 213 233 130 132 237 245 237 253 0 19 -38 69 -62 82 -18 10 -45 -14 -269 -237z m24 -127 c-158 -159 -282 -286 -276 -283 7 4 83 29 169 55 l157 49 -79 -78 -79 -78 -200 -60 c-110 -34 -201 -60 -202 -59 -1 2 25 93 59 202 l60 200 78 79 78 79 -48 -156 c-27 -86 -52 -162 -55 -169 -4 -7 122 116 281 274 l288 287 29 -26 28 -27 -288 -289z"></path> <path d="M801 896 l-205 -64 -79 -81 c-43 -44 -77 -86 -75 -92 11 -32 36 -33 125 -7 48 15 90 25 92 22 3 -3 -99 -109 -227 -237 -158 -158 -232 -239 -232 -254 0 -19 60 -83 78 -83 4 0 119 111 256 248 137 136 246 240 244 232 -52 -164 -60 -200 -48 -215 7 -8 18 -15 24 -15 6 0 46 35 88 78 74 75 77 79 108 182 18 58 46 145 61 195 16 49 29 99 29 110 0 20 -17 45 -29 45 -4 -1 -98 -29 -210 -64z m216 22 c-2 -7 -30 -98 -62 -203 l-57 -190 -78 -79 -78 -79 48 156 c27 86 52 162 56 169 3 7 -123 -116 -282 -275 l-289 -287 -28 27 -27 28 287 288 c194 194 278 284 258 277 -16 -6 -93 -31 -169 -55 l-139 -43 77 76 76 77 198 61 c223 70 216 68 209 52z"></path> <path d="M1502 948 c-7 -7 -12 -21 -12 -31 0 -18 97 -346 118 -397 6 -14 44 -59 86 -100 65 -63 79 -73 94 -64 21 14 19 43 -9 134 -11 36 -22 74 -25 85 -3 11 106 -92 244 -229 225 -224 251 -247 270 -237 27 14 62 59 62 79 0 9 -104 121 -232 249 -128 128 -230 235 -227 237 2 3 44 -7 92 -22 89 -26 114 -25 125 7 2 7 -33 50 -79 95 l-84 82 -190 58 c-104 31 -197 59 -205 62 -9 2 -21 -1 -28 -8z m223 -83 l190 -57 79 -78 79 -78 -157 49 c-86 26 -162 51 -169 55 -6 3 117 -123 276 -282 l287 -289 -27 -28 -28 -27 -289 287 c-159 159 -285 282 -282 275 4 -7 29 -83 56 -169 l48 -156 -78 79 -78 79 -57 190 c-32 105 -60 196 -63 204 -4 10 -1 13 9 9 8 -3 100 -31 204 -63z">
+                                                                    </path> 
+                                                                </g> 
+                                                                </svg>
+                                                            </span>
+                                                        </section>
+                                                            <span class="glyphicon glyphicon-resize-small pointer none" onclick="ExitFullscreen()" style="display:none"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="select-wrapper">
+                                                    <ul id="pos">
+                                                        <li>
+                                                            <div class="text">片头</div>
+                                                            <img id="main" src="./images/position.png" data-src="" video_id="video_main" />
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="option-wrapper" style="z-index:100000">
+                                            <div class="question"></div>
+                                            <ul class="clearfix"> 
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--vid-pr end-->
+                            <div class="vid-info">
+                                <h3></h3>
+                                <div class="info-pr">
+                                    <span>0次观看</span>
+                                    <ul class="pr_links">
+                                        <li>
+                                            <button data-toggle="tooltip" data-placement="top" title="I like this">
+                                                <i class="icon-thumbs_up_fill"></i>
+                                            </button>
+                                            <span>0</span>
+                                        </li>
+                                        <li>
+                                            <button data-toggle="tooltip" data-placement="top" title="I dislike this">
+                                                <i class="icon-thumbs_down_fill"></i>
+                                            </button>
+                                            <span>0</span>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div><!--info-pr end-->
+                            </div><!--vid-info end-->
+                        </div><!--vid-1 end-->
+                        <div class="abt-mk">
+                            <div class="info-pr-sec">
+                                <div class="vcp_inf cr">
+                                    <div class="vc_hd">
+                                        <img src="images/resources/th5.png" alt="">
+                                    </div>
+                                    <div class="vc_info pr">
+                                        <h4><a href="#" title="">测试用户</a></h4>
+                                        <span>发布于2020年7月8日</span>
+                                    </div>
+                                </div><!--vcp_inf end-->
+                                <ul class="chan_cantrz">
+                                    <li>
+                                        <a href="#" title="" class="donate">加入</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="" class="subscribe">订阅<strong></strong></a>
+                                    </li>
+                                </ul><!--chan_cantrz end-->
+                                <ul class="df-list">
+                                    <li>
+                                        <button data-toggle="tooltip" data-placement="top" title="Add to playlist">
+                                            <i class="icon-add_to_playlist"></i>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button data-toggle="tooltip" data-placement="top" title="Favorite">
+                                            <i class="icon-like"></i>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button data-toggle="tooltip" data-placement="top" title="Watch Later">
+                                            <i class="icon-watch_later"></i>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button data-toggle="tooltip" data-placement="top" title="Share">
+                                            <i class="icon-share"></i>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button data-toggle="tooltip" data-placement="top" title="Report Video">
+                                            <i class="icon-flag"></i>
+                                        </button>
+                                    </li>
+                                </ul><!--df-list end-->
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="about-ch-sec">
+                                <div class="abt-rw">
+                                    <h4>标签:</h4>
+                                    <ul>
+                                        <li><span>幼升小</span></li>
+                                        <li><span>教育</span></li>
+                                        <li><span>数学</span></li>
+                                        <li><span>1080p</span></li>
+                                    </ul>
+                                </div>
+                                <div class="abt-rw">
+                                    <h4>关于:</h4>
+                                    <p>这是一个测试故事 </p>
+                                </div>
+                                <div class="abt-rw tgs">
+                                    <h4>话题:</h4>
+                                    <ul>
+                                        <li><a href="#" title="">#标签一</a></li>
+                                        <li><a href="#" title="">#标签二 </a></li>
+                                        <li><a href="#" title="">#标签三</a></li>
+                                        <li><a href="#" title="">#标签四</a></li>
+                                    </ul>
+                                </div>
+                            </div><!--about-ch-sec end-->
+                        </div><!--abt-mk end-->
+                        <div class="cmt-bx">
+                            <ul class="cmt-pr">
+                                <li><span>1</span>评论</li>
+                                <li>
+                                    <span><i class="icon-sort_by"></i><a href="#" title="">Sort By</a></span>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="vcp_inf pc">
+                                <div class="vc_hd">
+                                    <img src="images/resources/th1.png" alt="">
+                                </div>
+                                <form>
+                                    <input type="text" placeholder="留下你的评论">
+                                    <button type="submit">评论</button>
+                                </form>
+                                <div class="clearfix"></div>
+                                <div class="rt-cmt">
+                                    <a href="#" title="">
+                                        <i class="icon-cancel"></i>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div><!--vcp_inf end-->
+                            </div><!--cmt-bx end-->
+                            <ul class="cmn-lst">
+                                <li>
+                                    <div class="vcp_inf">
+                                        <div class="vc_hd">
+                                            <img src="images/resources/th2.png" alt="">
+                                        </div>
+                                        <div class="coments">
+                                            <div class="pinned-comment">
+                                                <span><i class="icon-pinned"></i>置顶</span>
+                                            </div>
+                                            <h2>管理员<small class="posted_dt">2020年7月8日</small></h2>
+                                            <p>这个是一个测试视频</p>
+                                            <ul class="cmn-i">
+                                                <li>
+                                                    <a href="#" title="">
+                                                        <i class="icon-thumbs_up"></i>
+                                                    </a>
+                                                    <span>0</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#" title="">
+                                                        <i class="icon-thumbs_down"></i>
+                                                    </a>
+                                                    <span>0</span>
+                                                </li>
+                                            </ul>
+                                            <a href="#" title="">显示更多评论</a>
+                                        </div><!--coments end-->
+                                    </div><!--vcp_inf end-->
+                                </li>
+                            </ul><!--comment list end-->
+                        </div>
+                    </div><!--mn-vid-sc end--->
+                </div><!---col-lg-9 end-->
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <div class="vidz-prt">
+                            <h2 class="sm-vidz">Similar Videos</h2>
+                            <h3 class="aut-vid">
+                                <span>Autoplay </span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <b class="slider round"></b>
+                                </label>
+                            </h3>
+                            <div class="clearfix"></div>
+                        </div><!--vidz-prt end-->
+                        <div class="videoo-list-ab">
+                            <div class="videoo">
+                                <div class="vid_thumbainl">
+                                    <a href="single_video_page.html" title="">
+                                        <img src="images/resources/vide2.png" alt="">
+                                        <span class="vid-time">13:49</span>
+                                        <span class="watch_later">
+                                            <i class="icon-watch_later_fill"></i>
+                                        </span>
+                                    </a>
+                                </div><!--vid_thumbnail end-->
+                                <div class="video_info">
+                                    <h3><a href="#" title="">DR DISRESPECT - Before They Were Famous - Twitch Streamer</a></h3>
+                                    <h4><a href="#" title="">newfox media</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                    <span>686K views .<small class="posted_dt">1 week ago</small></span>
+                                </div>
+                            </div><!--videoo end-->
+                            <div class="videoo">
+                                <div class="vid_thumbainl">
+                                    <a href="single_video_page.html" title="">
+                                        <img src="images/resources/vide3.png" alt="">
+                                        <span class="vid-time">2:54</span>
+                                        <span class="watch_later">
+                                            <i class="icon-watch_later_fill"></i>
+                                        </span>
+                                    </a>
+                                </div><!--vid_thumbnail end-->
+                                <div class="video_info">
+                                    <h3><a href="#" title="">Top Perectly Timed Twitch Moments 2017 #7</a></h3>
+                                    <h4><a href="#" title="">newfox media</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                    <span>686K views .<small class="posted_dt">1 week ago</small></span>
+                                </div>
+                            </div><!--videoo end-->
+                            <div class="ad-rw">
+                                <img src="images/resources/ad-img.jpg" alt="">
+                            </div>
+                            <div class="videoo">
+                                <div class="vid_thumbainl">
+                                    <a href="single_video_page.html" title="">
+                                        <img src="images/resources/vide4.png" alt="">
+                                        <span class="vid-time">5:25</span>
+                                        <span class="watch_later">
+                                            <i class="icon-watch_later_fill"></i>
+                                        </span>
+                                    </a>
+                                </div><!--vid_thumbnail end-->
+                                <div class="video_info">
+                                    <h3><a href="#" title="">Top 5 Amazing Bridge Block ever in PUBG</a></h3>
+                                    <h4><a href="#" title="">newfox media</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                    <span>686K views .<small class="posted_dt">1 week ago</small></span>
+                                </div>
+                            </div><!--videoo end-->
+                            <div class="videoo">
+                                <div class="vid_thumbainl">
+                                    <a href="single_video_page.html" title="">
+                                        <img src="images/resources/vide5.png" alt="">
+                                        <span class="vid-time">4:01</span>
+                                        <span class="watch_later">
+                                            <i class="icon-watch_later_fill"></i>
+                                        </span>
+                                    </a>
+                                </div><!--vid_thumbnail end-->
+                                <div class="video_info">
+                                    <h3><a href="#" title="">Trailer Park Boys Season 12 - Official Trailer</a></h3>
+                                    <h4><a href="#" title="">newfox media</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                    <span>686K views .<small class="posted_dt">1 week ago</small></span>
+                                </div>
+                            </div><!--videoo end-->
+                            <div class="videoo">
+                                <div class="vid_thumbainl">
+                                    <a href="single_video_page.html" title="">
+                                        <img src="images/resources/vide6.png" alt="">
+                                        <span class="vid-time">6:20</span>
+                                        <span class="watch_later">
+                                            <i class="icon-watch_later_fill"></i>
+                                        </span>
+                                    </a>
+                                </div><!--vid_thumbnail end-->
+                                <div class="video_info">
+                                    <h3><a href="#" title="">A day in the life of a Google software engineer</a></h3>
+                                    <h4><a href="#" title="">newfox media</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                    <span>686K views .<small class="posted_dt">1 week ago</small></span>
+                                </div>
+                            </div><!--videoo end-->
+                            <div class="videoo">
+                                <div class="vid_thumbainl">
+                                    <a href="single_video_page.html" title="">
+                                        <img src="images/resources/vide7.png" alt="">
+                                        <span class="vid-time">8:16</span>
+                                        <span class="watch_later">
+                                            <i class="icon-watch_later_fill"></i>
+                                        </span>
+                                    </a>
+                                </div><!--vid_thumbnail end-->
+                                <div class="video_info">
+                                    <h3><a href="#" title="">Avengers: Infinity War - Gym Workout</a></h3>
+                                    <h4><a href="#" title="">newfox media</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                    <span>686K views .<small class="posted_dt">1 week ago</small></span>
+                                </div>
+                            </div><!--videoo end-->
+                            <div class="videoo">
+                                <div class="vid_thumbainl">
+                                    <a href="single_video_page.html" title="">
+                                        <img src="images/resources/vide8.png" alt="">
+                                        <span class="vid-time">29:32</span>
+                                        <span class="watch_later">
+                                            <i class="icon-watch_later_fill"></i>
+                                        </span>
+                                    </a>
+                                </div><!--vid_thumbnail end-->
+                                <div class="video_info">
+                                    <h3><a href="#" title="">How the Universe Works - The Milky Way Galaxy - Space</a></h3>
+                                    <h4><a href="#" title="">newfox media</a> <span class="verify_ic"><i class="icon-tick"></i></span></h4>
+                                    <span>686K views .<small class="posted_dt">1 week ago</small></span>
+                                </div>
+                            </div><!--videoo end-->
+                        </div><!--videoo-list-ab end-->
+                    </div><!--side-bar end-->
+                </div>
+            </div>
+        </div>
+    </section><!--mn-sec end-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/flatpickr.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/plyr.js"></script>
+    <script src="js/svg/svgicons-config.js"></script>
+    <script src="js/svg/svgicons.js"></script>
+    <script type="text/javascript">
+
+        var isos = "";
+        window.video_number = 1;
+
+       
+
+
+        window.onload = function () {
+
+
+            /******************* jQuery ***********************/
+            $(function () {
+                var play = $(".glyphicon-play");
+                var pause = $(".glyphicon-pause");
+                var full = $(".glyphicon-resize-full");
+                var exitFull = $(".glyphicon-resize-small");
+                var soundUp = $(".glyphicon-volume-up");
+                var soundDown = $(".glyphicon-volume-down");
+                var muted = $(".glyphicon-volume-off");
+
+
+                console.log(navigator.userAgent);
+
+
+
+
+
+
+
+
+                $(".video-box").mousemove(function () {
+                    // $("#controller").fadeIn(400);
+                }).mouseleave(function () {
+                    $("#controller").fadeOut(400);
+                });
+                var video = document.getElementById("video");
+                video.controls = false;
+
+                /*点击视频暂停/播放*/
+
+
+                /*切换显示图标*/
+                play.click(function () {//播放状态
+                    $(this).hide();
+                    pause.show();
+                    // flag=true;
+                });
+                pause.click(function () {//暂停状态
+                    $(this).hide();
+                    play.show();
+                    // flag=false;
+                });
+
+                full.click(function () {
+                    $(this).hide();
+                    exitFull.show();
+                });
+                exitFull.click(function () {
+                    $(this).hide();
+                    full.show();
+                });
+
+                soundUp.click(function () {
+                    $(this).hide();
+                    muted.show();
+                });
+                soundDown.click(function () {
+                    $(this).hide();
+                    muted.show();
+                });
+                muted.click(function () {
+                    $(this).hide();
+                    soundNow.style.width = last;
+                    last === "100%" ? soundUp.show() : soundDown.show();
+                });
+
+                console.log('/*点击倍速*/');
+                /*点击倍速*/
+                $(".rate").click(function () {
+                    if ($(".rate-dashboard").is(':hide')) {
+                        $(".rate-dashboard").show().children("li").click(function () {
+                            $(this).css("color", "#007ffe").siblings().css("color", "#eee");
+                            var t = $(this).text();
+                            $(".rate").text(t);
+                            $(this).parent().hide();
+                        });
+                    } else {
+                        $(".rate-dashboard").hide();
+                        console.log("adadad");
+                    }
+                });
+
+            });
+
+
+            /******* 视频进度条 ********/
+            // const 定义的变量不可以修改，而且必须初始化
+            const video = document.getElementById('film');
+            const start = document.querySelector('.start');
+            const end = document.querySelector('.end');
+            const progressBar = document.querySelector('.progress-bar');
+            const now = document.querySelector('.now');
+
+            // let 声明的变量只在该花括号内有效（块级作用域），要声明才可用
+            function conversion(value) {
+                let minute = Math.floor(value / 60);
+                minute = minute.toString().length === 1 ? ('0' + minute) : minute;
+                let second = Math.round(value % 60);
+                second = second.toString().length === 1 ? ('0' + second) : second;
+                return `${minute}:${second}`
+            }
+
+            video.onloadedmetadata = function () {
+                end.innerHTML = conversion(video.duration);
+                start.innerHTML = conversion(video.currentTime);
+            };
+
+
+            $('.progress-bar').mousedown(function () {
+                let coordStart = this.getBoundingClientRect().left;
+                let coordEnd = event.pageX;
+                let p = (coordEnd - coordStart) / this.offsetWidth;
+                now.style.width = p.toFixed(3) * 100 + '%';
+
+                video.currentTime = p * video.duration;
+                video.play();
+            })
+
+
+
+            setInterval(() => {
+                start.innerHTML = conversion(video.currentTime);
+                now.style.width = video.currentTime / video.duration.toFixed(3) * 100 + '%'
+            }, 1000)
+        }
+
+        /******************* jQuery ***********************/
+        $(function () {
+            var play = $(".glyphicon-play");
+            var pause = $(".glyphicon-pause");
+            var full = $(".glyphicon-resize-full");
+            var exitFull = $(".glyphicon-resize-small");
+            var soundUp = $(".glyphicon-volume-up");
+            var soundDown = $(".glyphicon-volume-down");
+            var muted = $(".glyphicon-volume-off");
+            var soundProgress = $(".sound-progress");
+            var sound_ui;
+            window.isplayover = false;
+            window.isdown = false;
+            var issounddown = false
+
+
+
+            $(".video-box").mousemove(function () {
+                if (!isplayover) {
+                    $("#controller").fadeIn(400);
+
+                }
+            }).mouseleave(function () {
+
+                // $("#controller").fadeOut(400);
+
+            });
+
+
+            /*切换显示图标*/
+            play.click(function () {//播放状态
+                $(this).hide();
+                pause.show();
+                // flag=true;
+            });
+            pause.click(function () {//暂停状态
+                $(this).hide();
+                play.show();
+                // flag=false;
+            });
+
+            full.click(function () {
+                $(this).hide();
+                exitFull.show();
+            });
+            exitFull.click(function () {
+                $(this).hide();
+                full.show();
+            });
+
+            soundUp.click(function () {
+                $(this).hide();
+                muted.show();
+            });
+            soundDown.click(function () {
+                $(this).hide();
+                muted.show();
+            });
+            muted.click(function () {
+                $(this).hide();
+                soundNow.style.width = last;
+                last === "100%" ? soundUp.show() : soundDown.show();
+            });
+
+
+            var flip = false,
+                pause = "M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28",
+                play = "M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26",
+                $animation = $('#animation');
+
+            $(".ytp-play-button").on('click', function () {
+                flip = !flip;
+                if (flip == true) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+
+                $animation.attr({
+                    "from": flip ? pause : play,
+                    "to": flip ? play : pause
+                }).get(0).beginElement();
+            });
+
+
+            soundProgress.stop().show();
+
+
+            var os = function () {
+                var ua = navigator.userAgent,
+                    isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                    isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                    isAndroid = /(?:Android)/.test(ua),
+                    isFireFox = /(?:Firefox)/.test(ua),
+                    isChrome = /(?:Chrome|CriOS)/.test(ua),
+                    isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+                    isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                    isPc = !isPhone && !isAndroid && !isSymbian;
+                return {
+                    isTablet: isTablet,
+                    isPhone: isPhone,
+                    isAndroid: isAndroid,
+                    isPc: isPc
+                };
+            }();
+
+            if (os.isAndroid || os.isPhone) {
+                isos = "手机";//alert("手机")
+            } else if (os.isTablet) {
+                isos = "平板";//alert("平板")
+            } else if (os.isPc) {
+                isos = "电脑"; //alert("电脑")
+            }
+
+
+            
+
+
+
+            soundProgress.on('mousedown', function (event) {
+                console.log("按下");
+                issounddown = true;
+                muted.hide();
+                last === "100%" ? soundUp.show() : soundDown.show();
+                myVideo.muted = false;
+                let soundWidth = event.pageX - this.getBoundingClientRect().left;
+                soundWidth = soundWidth < 0 ? 0 : soundWidth;
+                soundWidth = soundWidth > this.offsetWidth ? this.offsetWidth : soundWidth;
+                let p = soundWidth / this.offsetWidth;
+                soundNow.style.width = p.toFixed(2) * 100 + '%';
+                last = p.toFixed(2) * 100 + '%';
+                myVideo.volume = p;
+
+                soundProgress.on('mouseleave', function (event) {
+
+                })
+
+            }).on('mouseup', function (event) {
+                console.log("松开");
+                issounddown = false;
+                muted.hide();
+                last === "100%" ? soundUp.show() : soundDown.show();
+                myVideo.muted = false;
+                let soundWidth = event.pageX - this.getBoundingClientRect().left;
+                soundWidth = soundWidth < 0 ? 0 : soundWidth;
+                soundWidth = soundWidth > this.offsetWidth ? this.offsetWidth : soundWidth;
+                let p = soundWidth / this.offsetWidth;
+                soundNow.style.width = p.toFixed(2) * 100 + '%';
+                last = p.toFixed(2) * 100 + '%';
+                myVideo.volume = p;
+
+            });
+
+
+            $(document).on('mouseup', function (e) {
+                issounddown = false;
+                isdown = false;
+            });
+
+            $(".sound-progress").mousemove(function (event) {
+                if (issounddown) {
+                    muted.hide();
+                    last === "100%" ? soundUp.show() : soundDown.show();
+                    myVideo.muted = false;
+                    let soundWidth = event.pageX - this.getBoundingClientRect().left;
+                    soundWidth = soundWidth < 0 ? 0 : soundWidth;
+                    soundWidth = soundWidth > this.offsetWidth ? this.offsetWidth : soundWidth;
+                    let p = soundWidth / this.offsetWidth;
+                    soundNow.style.width = p.toFixed(2) * 100 + '%';
+                    last = p.toFixed(2) * 100 + '%';
+                    myVideo.volume = p;
+                }
+            });
+
+
+
+            $(".show-sound-now").stop().show().text(soundNow.style.width).delay(1000).hide(0);
+
+            if (soundNow.style.width === "0%") {
+                soundUp.hide();
+                soundDown.hide();
+                muted.show();
+            } else if (soundNow.style.width === "100%") {
+                muted.hide();
+                soundDown.hide();
+                soundUp.show();
+            } else {
+                soundUp.hide();
+                muted.hide();
+                soundDown.show();
+            }
+        });
+
+        /*点击倍速*/
+        $(".rate").click(function () {
+            if ($(".rate-dashboard").is(':hidden')) {
+                $(".rate-dashboard").show().children("li").click(function () {
+                    $(this).css("color", "#007ffe").siblings().css("color", "#eee");
+                    var t = $(this).text();
+                    $(".rate").text(t);
+                    $(this).parent().hide();
+
+                });
+
+                console.log("adadad");
+            } else {
+                $(".rate-dashboard").hide();
+
+            }
+        });
+
+
+
+
+        /******* 视频进度条 ********/
+        // const 定义的变量不可以修改，而且必须初始化
+        const video = document.getElementById('film');
+        const start = document.querySelector('.start');
+        const end = document.querySelector('.end');
+        const progressBar = document.querySelector('.progress-bar');
+        const now = document.querySelector('.now');
+        const now2 = document.querySelector('.plyr__volume--input');
+
+        // let 声明的变量只在该花括号内有效（块级作用域），要声明才可用
+        function conversion(value) {
+            let minute = Math.floor(value / 60);
+            minute = minute.toString().length === 1 ? ('0' + minute) : minute;
+            let second = Math.round(value % 60);
+            second = second.toString().length === 1 ? ('0' + second) : second;
+            return `${minute}:${second}`
+        }
+
+        video.onloadedmetadata = function () {
+            end.innerHTML = conversion(video.duration);
+            start.innerHTML = conversion(video.currentTime);
+        };
+
+        progressBar.addEventListener('click', function (event) {
+            //getBoundingClientRect();
+
+            // 这个方法返回一个矩形对象，包含四个属性：left、top、right和bottom。分别表示元素各边与页面上边和左边的距离。
+            let coordStart = this.getBoundingClientRect().left;
+            let coordEnd = event.pageX;
+            let p = (coordEnd - coordStart) / this.offsetWidth;
+            now.style.width = p.toFixed(3) * 100 + '%';
+            video.currentTime = p * video.duration;
+            //video.play();
+            //play.show();
+        });
+        //$('.progress-bar').mouseover(function () {
+        //    $(this).mousedown(function () {
+        //        window.isdown = true;
+        //        let coordStart = this.getBoundingClientRect().left;
+        //        let coordEnd = event.pageX;
+        //        let p = (coordEnd - coordStart) / this.offsetWidth;
+        //        now.style.width = p.toFixed(3) * 100 + '%';
+        //        video.currentTime = p * video.duration;
+
+        //    }).mouseup(function () {
+        //        window.isdown = false;
+        //        let coordStart = this.getBoundingClientRect().left;
+        //        let coordEnd = event.pageX;
+        //        let p = (coordEnd - coordStart) / this.offsetWidth;
+        //        now.style.width = p.toFixed(3) * 100 + '%';
+        //        video.currentTime = p * video.duration;
+
+        //    });
+
+
+        //});
+
+
+        $('.progress-bar').on('mousedown', function (event) {
+            window.isdown = true;
+            if (window.isdown) {
+                let coordStart = this.getBoundingClientRect().left;
+                let coordEnd = event.pageX;
+                let p = (coordEnd - coordStart) / this.offsetWidth;
+                now.style.width = p.toFixed(3) * 100 + '%';
+                video.currentTime = p * video.duration;
+            }
+
+        }).on('mousemove', function (event) {
+            if (window.isdown) {
+                let coordStart = this.getBoundingClientRect().left;
+                let coordEnd = event.pageX;
+                let p = (coordEnd - coordStart) / this.offsetWidth;
+                now.style.width = p.toFixed(3) * 100 + '%';
+                video.currentTime = p * video.duration;
+            }
+        }).on('mouseup', function (event) {
+            let coordStart = this.getBoundingClientRect().left;
+            let coordEnd = event.pageX;
+            let p = (coordEnd - coordStart) / this.offsetWidth;
+            now.style.width = p.toFixed(3) * 100 + '%';
+            video.currentTime = p * video.duration;
+            window.isdown = false;
+        });
+
+
+
+        /*
+                $('.progress-bar').click(function () {
+                    let coordStart = this.getBoundingClientRect().left;
+                    let coordEnd = event.pageX;
+                    let p = (coordEnd - coordStart) / this.offsetWidth;
+                    now.style.width = p.toFixed(3) * 100 + '%';
+                    console.log("tuodong");
+                    video.currentTime = p * video.duration;
+                    $(".glyphicon-pause").show();
+                    $(".glyphicon-play").hide();
+                });
+                */
+
+
+         var progress=$('.plyr__progress--played');
+
+        setInterval(() => {
+            if (!window.isdown) {
+                start.innerHTML = conversion(video.currentTime);
+                now2.max = video.duration.toFixed(3) * 100;
+                now2.value = video.currentTime * 100;
+                value = video.currentTime / video.duration.toFixed(3) * 100;
+                progress.attr("value", value);
+                if (video.buffered.length != 0) {
+                    $('.plyr__progress--buffer').attr("value", (video.buffered.end(video.buffered.length - 1) / video.duration) * 100);
+                }
+            }
+
+        }, 25)
+        setInterval(() => {
+            start.innerHTML = conversion(video.currentTime);
+            now.style.width = video.currentTime / video.duration.toFixed(3) * 100 + '%'
+        }, 25)
+
+
+
+      
+
+
+
+        var videoBox = document.getElementById("videoBox");
+        var myVideo = document.getElementById("film");
+        var soundNow = document.getElementsByClassName("sound-now")[0];
+        var playImg = document.getElementById("playImg");
+        var pauseImg = document.getElementById("pauseImg");
+
+        var last = "100%", timeId;
+
+        this.console.log("ddddd");
+        /*停止-跳回开头*/
+        function stop() {
+            myVideo.pause();
+            myVideo.currentTime = 0;
+        }
+
+        var isfull = false;
+        /*全屏*/
+        $('.si-icons.si-icons-hoversmall').attr("style", "display:none;");
+        function fullScreen() {
+            if (!isfull) {
+                isfull = true;
+                console.log(isfull);
+                var bodyHeight = document.documentElement.clientHeight;
+                var bodyWidth = document.documentElement.clientWidth;
+                if (videoBox.requestFullscreen) {
+                    videoBox.requestFullscreen();
+                    if (isos === '手机') {
+                        $('#videoBox').toggleClass("activefull");
+                        screen.orientation.lock('landscape-primary');
+                        console.log(isos);
+                    }
+
+                    $("#videoBox").width((bodyHeight) + "px");
+                    $("#videoBox").height((bodyWidth) + "px");
+                    $('#videoBox').toggleClass("fullscreen");
+                    myVideo.style.width = "auto";
+                    myVideo.style.height = "100%";
+                } else if (videoBox.mozRequestFullScreen) {
+                    videoBox.mozRequestFullScreen();
+                    if (isos === '手机') {
+                        $('#videoBox').toggleClass("activefull");
+                        screen.orientation.lock('landscape-primary');
+
+                    }
+
+                    $("#videoBox").width((bodyHeight) + "px");
+                    $("#videoBox").height((bodyWidth) + "px");
+                    $('#videoBox').toggleClass("fullscreen");
+                    myVideo.style.width = "auto";
+                    myVideo.style.height = "100%";
+
+                } else if (videoBox.webkitRequestFullScreen) {
+                    videoBox.webkitRequestFullscreen();
+                    if (isos === '手机') {
+                        $('#videoBox').toggleClass("activefull");
+                        screen.orientation.lock('landscape-primary');
+
+                    }
+
+                    $("#videoBox").width((bodyHeight) + "px");
+                    $("#videoBox").height((bodyWidth) + "px");
+                    $('#videoBox').toggleClass("fullscreen");
+                    myVideo.style.width = "auto";
+                    myVideo.style.height = "100%";
+
+                }
+                $(".si-icons.si-icons-hover").attr("style", "display:none;left: 10px;");
+                $('.si-icons.si-icons-hoversmall').attr("style", "display:block;height:30px;width:30px;right:25px;bottom:10px;");
+            }
+
+           // $(".glyphicon-resize-full").hide();
+            // $(".glyphicon-resize-small").show();
+        } 
+
+
+        /*退出全屏*/
+
+
+        document.addEventListener("fullscreenchange", function (e) {
+
+            if (isfull) {
+               
+                    if (isos === '手机') {
+
+                    }
+
+                    $('#videoBox').removeClass("fullscreen");
+                    $("#videoBox").removeAttr("style");
+                    $('#film').removeAttr("style");
+                     isfull = false;
+                
+            }
+        });
+        document.addEventListener("mozfullscreenchange", function (e) {
+            console.log("mozfullscreenchange ", e);
+        });
+        document.addEventListener("webkitfullscreenchange", function (e) {
+            console.log("webkitfullscreenchange", e);
+            if (isfull) {
+                de.exitFullscreen();
+                $('#videoBox').removeClass("fullscreen");
+                $("#videoBox").removeAttr("style");
+                $('#film').removeAttr("style");
+
+            }
+        });
+        document.addEventListener("msfullscreenchange", function (e) {
+            console.log("msfullscreenchange", e);
+        });
+
+     
+
+        function ExitFullscreen() {
+            console.log('tui');
+            var de = document;
+            if (de.exitFullscreen) {
+                if (isos === '手机') {
+
+                }
+                de.exitFullscreen();
+                $('#videoBox').removeClass("fullscreen");
+                $("#videoBox").removeAttr("style");
+                $('#film').removeAttr("style");
+            } else if (de.mozCancelFullScreen) {
+                de.mozCancelFullScreen();
+                if (isos === '手机') {
+
+
+                }
+                $('#videoBox').removeClass("fullscreen");
+                $("#videoBox").removeAttr("style");
+                $('#film').removeAttr("style");
+            } else if (de.webkitCancelFullScreen) {
+                de.webkitCancelFullScreen();
+                if (isos === '手机') {
+
+
+                }
+                $('#film').removeAttr("style");
+                $('#videoBox').removeClass("fullscreen");
+                $("#videoBox").removeAttr("style");
+
+            }
+
+            $(".si-icons.si-icons-hover").attr("style", "display:block;left: 10px;");
+            $('.si-icons.si-icons-hoversmall').attr("style", "display:none;");
+            isfull = false;
+        }
+
+        /*音量*/
+        function soundMuted() {
+            if (myVideo.muted) {//未静音
+                myVideo.muted = false;
+                soundNow.style.width = "100%";
+            } else {//静音
+                myVideo.muted = true;
+                soundNow.style.width = "0";
+            }
+        }
+
+        /*倍速播放*/
+        function getRate(element) {
+            console.log();
+            myVideo.playbackRate = parseFloat(element.innerHTML);
+        }
+
+
+        /*播放/暂停*/
+        function playPause() {
+            if (myVideo.paused) {
+                myVideo.play();
+                pauseImg.style.display = "none";
+                playImg.style.display = "block";
+                $("#playImg").fadeIn(400);
+                timeId = setInterval("hideScreenPlay()", 300)
+            } else {
+                myVideo.pause();
+                pauseImg.style.display = "block";
+            }
+        }
+        function hideScreenPlay() {
+            $("#playImg").fadeOut(300);
+            clearInterval(timeId);
+        }
+        var html_video;
+        window.onload = function () {                                        //选择故事播放功能
+
+            var oVideo, oVideoWrapper, oSelectBtn, oText;
+            var videoList = new Array();
+            var scale = 0.8;
+            var flag = true;
+            var html_video;
+            var div;
+            var video_id = "video_main";
+            var video_array = this.Array();
+            var vidWidht = 50;
+
+
+
+
+            var initialize = function () {
+                oVideo = document.getElementById('film');
+                oVideoWrapper = document.getElementsByClassName('video-box text-center')[0];
+                oSelectWrapper = document.getElementsByClassName('select-wrapper')[0];
+                aSelectIcon = oSelectWrapper.getElementsByTagName('li');
+                oOption = oVideoWrapper.getElementsByClassName('option-wrapper')[0];
+                aOption = oOption.getElementsByTagName('li');
+
+                var v = {
+                    video: document.getElementById("video"),//容器框
+                    play: document.getElementById("play"),//播放按钮
+                    pause: document.getElementById("pause"),//暂停按钮
+                    duration: document.getElementById("duration"),//总时长
+                    currentTime: document.getElementById("currentTime"),//当前播放时间
+                    progress: document.getElementsByClassName("progress")[0],//进度条容器
+                    timrBar: document.getElementsByClassName("timrBar")[0], //进度条
+
+                    sound: document.getElementsByClassName("video-sound")[0], //音量容器
+                    soundBar: document.getElementsByClassName("soundBar")[0],//音量
+                    playSpeed: document.getElementById("playSpeed"),//播放速率
+                    warp: document.getElementById("video-warp"), //视频区域距离左边距离
+                    soundPercent: 0,//音量百分比
+                    fullScreen: document.getElementById("screen")/*全屏按钮*/
+                };
+
+
+                oVideoWrapper.onmouseover = function () {
+                    oSelectWrapper.style.visibility = 'visible';
+                };
+
+                oVideoWrapper.onmouseout = function () {
+                    oSelectWrapper.style.visibility = 'hidden';
+                };
+
+                refreshSelect();
+                caluSelectPosition();
+                oVideo.addEventListener('ended', choice);
+                var video_main = getUrlArgs('video_id');
+                upHtml("project_name", video_main['video_main']);
+                //upHtml($.cookie('video_name'));
+
+            };
+
+
+
+
+            function getFileName(file) {//通过第二种方式获取文件名
+                var arr = file.split('/');//通过\分隔字符串，成字符串数组
+                return arr[arr.length - 1];//取最后一个，就是文件名
+            }
+
+            //----------------------------------------------------------------------------------------
+            //全屏功能
+
+            //function getreqfullscreen(root) {
+            //    var root = document.documentElement
+            //    return root.requestFullscreen || root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen
+            //}
+            //var fullscreen = getreqfullscreen();
+            //function full() {
+
+            //    fullscreen.call(document.getElementById("player"));
+            //}
+
+            //------------------------------------------------------------------------------------------
+            //开始访问时获取视频逻辑结构
+
+            let upHtml = function (project_name, videoID) {
+                let formData = new FormData();
+                formData.append("state", "200");
+                formData.append("video_id", videoID);
+                formData.append("project_name", project_name);
+                $.ajax({
+                    url: './php/play.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: 'text',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        html_video = data;
+                        htmldom = $(data).get(0);
+                        h = $(htmldom);
+                        div = h;
+                        videoPlaySrc = h.attr('src');
+                        console.log(div);
+                        $('#film').attr('src', decodeURI(videoPlaySrc));
+                        $('#main').attr('data-src', decodeURI(videoPlaySrc));
+                        $('.vid-info').children('h3').html((h.attr('name').split('.')[0]).substring(14));
+                        console.log(videoPlaySrc);
+
+                        //findVideoID(h);
+                        //getVideoID(h);
+                        /*  $('.question').html(h.attr('data-question'));
+                          $('#answer1').html(h.attr('data-answer1'));
+                          $('#answer2').html(h.attr('data-answer2'));
+                          $('#answer3').html(h.attr('data-answer3'));
+                          $('#answer4').html(h.attr('data-answer4'));*/
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            }
+
+            //-----------------------------------------------------------------------------
+            //利用HTML文档解析视频间的逻辑
+            function findVideoID(ele) {
+                vid = ele.find(`#${video_id}`);
+
+                getVideoID(vid);
+                console.log(vid);
+
+            }
+
+            let captureImage = function (video) {
+                let scale = 0.8;
+                let canvas = document.createElement("canvas");
+                canvas.width = 400;
+                canvas.height = 200;
+                console.log("截图");
+                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                $('#file').html(`<img src="${canvas.toDataURL("image/png")}" alt="">
+                                               <span>${video.name}</span>`);
+            };
+
+
+
+
+            function getVideoID(hear) {
+                if ($(hear).length == 0) {
+                    console.log(hear);
+
+                    console.log($(hear.prevObject[0]).children());
+                    videoList.splice(0);
+                    for (i = 1; i < $(hear.prevObject[0]).children().length; i++) {
+                        videoid = $(hear.prevObject[0]).children().get(i);
+                        src = decodeURI($(videoid).attr('src'));
+
+                        videoList.push(src);
+
+                        $('.clearfix').append(`
+                                            <li id="answer${i}" style="color:aliceblue" video-id="">${$(hear.prevObject[0]).attr('data-answer' + i)}</li>
+                                                                                                `);
+
+                        $('#answer' + i).attr('video-id', $($(hear.prevObject[0]).children()[i]).attr('id'));
+                        console.log($(hear.prevObject[0]).attr('data-answer' + i));
+                        $('#answer' + i).html($(hear.prevObject[0]).attr('data-answer' + i));
+                        console.log($($(hear.prevObject[0]).children()[i]).attr('id'));
+                    }
+                    $('.question').html($(hear.prevObject[0]).attr('data-question'));
+
+
+                } else {
+
+                    $('.clearfix').empty();
+
+
+                    console.log($(hear[0]).children()[1]);
+                    videoList.splice(0);
+                    for (i = 1; i < $(hear[0]).children().length; i++) {
+                        videoid = $(hear[0]).children().get(i);
+                        src = decodeURI($(videoid).attr('src'));
+                        console.log(src);
+                        videoList.push(src);
+
+                        $('.clearfix').append(`<li id="answer${i}" style="color:aliceblue" video-id="">${$(hear[0]).attr('data-answer' + i)}</li>`);
+
+                        $('#answer' + i).attr('video-id', $($(hear[0]).children()[i]).attr('id'));
+
+                        console.log(src);
+                    }
+                    $('.question').html($(hear[0]).attr('data-question'));
+
+                }
+            }
+
+
+
+
+            function refreshSelect() {
+                for (let i = 0; i < aSelectIcon.length; i++) {
+                    let oText = aSelectIcon[i].getElementsByClassName('text')[0];
+                    aSelectIcon[i].onmouseover = function () {
+                        oText.style.display = 'block'
+                    };
+                    aSelectIcon[i].onmouseout = function () {
+                        oText.style.display = 'none';
+                    };
+                    aSelectIcon[i].onclick = function () {
+                        for (let j = 0; j < aSelectIcon.length; j++) {
+                            let oImg = aSelectIcon[j].getElementsByTagName('img')[0];
+                            oImg.src = "./images/tick.png";
+                        }
+                        let oImg = aSelectIcon[i].getElementsByTagName('img')[0];
+                        oImg.src = "./images/position.png";
+                        oVideo.src = oImg.getAttribute('data-src');
+                        video_id = oImg.getAttribute("video_id");
+                        $('.clearfix').empty();
+                        console.log(video_id);
+                        for (i; i < aSelectIcon.length; i++) {
+                            $(aSelectIcon[i + 1]).remove();
+                            vidWidht = vidWidht - 50;
+                        }
+                        $('.select-wrapper').css('width', `${vidWidht}px`);
+                        console.log(i); 
+
+
+
+                    }
+                }
+            }
+            // -------------------------------------------------------------------------------------
+            // 设置select按钮的居中位置
+            function caluSelectPosition() {
+                var videoWidth = oVideo.clientWidth;
+                var width = (videoWidth - oSelectWrapper.clientWidth) / 2;
+                oSelectWrapper.style.left = `${width}px`;
+            };
+            // -------------------------------------------------------------------------------------
+
+            var choice = function () {
+                window.isplayover = true;
+                oVideo = document.getElementById('film');
+                console.log(div);
+                //getVideoID(div.children());
+                findVideoID(div);
+                oOption.style.display = 'block';
+                oSelectWrapper.style.display = 'none';
+                $('#controller').attr('style',"z-index:0;");
+                oVideo.controls = false;
+                console.log(aOption.length);
+                for (let i = 0; i < aOption.length; i++) {
+                    aOption[i].onclick = function () {
+                        //oVideo.src = `./video/takePhoto/${i + 1}.mp4`;
+                        video_id = $(`#answer${i + 1}`).attr('video-id');       //
+                        oVideo.src = videoList[i];
+                        oOption.style.display = 'none';
+                        oSelectWrapper.style.display = 'block';
+
+                        let oUl = oSelectWrapper.getElementsByTagName('ul')[0];
+                        let oImg = aSelectIcon[0].getElementsByTagName('img')[0];
+                        if (flag) {
+                            flag = false;
+                        } else {
+                            let aLi = oUl.getElementsByTagName('li');
+                            //oUl.removeChild(aLi[aLi.length - 1]);
+                        }
+                        for (let j = 0; j < aSelectIcon.length; j++) {
+                            let oImg = aSelectIcon[j].getElementsByTagName('img')[0];
+                            oImg.src = "./images/tick.png";
+                        }
+                        oImg.src = "./images/tick.png";
+                        oUl.innerHTML += `<li id="${window.video_number}"><div class="text">${this.innerHTML}</div><img src="./images/position.png" class="icon" data-src="${oVideo.src}" video_id="${video_id}""/></li>`;
+                        window.video_number=window.video_number + 1;
+                        oVideo.currentTime = 0;
+                        caluSelectPosition();
+                        refreshSelect();
+                        $('#controller').attr('style', "z-index:300;");
+                        oVideo.play();
+                        console.log("结束");
+                        window.isplayover = false;
+                    }
+                }
+
+                vidWidht = vidWidht + 50;
+                $('.select-wrapper').css('width', `${vidWidht}px`);
+                // console.log(document.getElementsByClassName('select-wrapper').style.setProperty('widht', vidWidht));
+            };
+            // -------------------------------------------------------------------------------------
+            // 获取元素样式值
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[attr];
+                } else {
+                    return getComputedStyle(obj, null)[attr];
+                }
+            }
+
+            //--------------------------------------------------------------------------------------
+            //判断电脑端还是移动端
+
+
+
+            initialize();
+
+           new svgIcon(document.querySelector('.si-icons-hover .si-icon-maximize'), svgIconConfig, { easing: mina.backin, evtoggle: 'mouseover', size: { w: 30, h: 30 } });
+
+        }
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
+        }
+
+
+        function getUrlArgs() {//公用方法
+            var url_pid = window.location.search.substring(1);//浏览器地址栏产品
+            var pairs = url_pid.split("&");
+            var urlinfo = {};
+            for (var i = 0; i < pairs.length; i++) {
+                var pos = pairs[i].indexOf('=');
+                urlinfo[pairs[i].substring(0, pos)] = decodeURI(pairs[i].substring(pos + 1));
+            };
+            return urlinfo;
+        };
+
+
+        function GetUrlByParamName(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var URL = decodeURI(window.location.search);
+            var r = URL.substr(1).match(reg);
+            if (r != null) {
+                //decodeURI() 函数可对 encodeURI() 函数编码过的 URI 进行解码
+                return decodeURI(r[2]);
+            };
+            return null;
+        };
+
+      
+
+
+      
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
