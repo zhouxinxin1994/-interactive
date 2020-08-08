@@ -2,7 +2,7 @@
 
 数据库的设置文件在config.php里；
 
-demo的地址是http://http://www.zjxcode.tk/
+demo的地址是http://www.zjxcode.tk/
 
 测试的账号和密码
 
